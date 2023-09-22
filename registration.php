@@ -43,11 +43,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     else {
+        $sql = "INSERT INTO user_data (name, email, username, password) VALUES ('$name','$email','$username','$password') ";
         try{
 
-            $sql = "INSERT INTO user_data (name, email, username, password) VALUES ('$name','$email','$username','$password') ";
             echo "Succesfully registered!";
-           
             mysqli_query($conn, $sql);
         }
         
