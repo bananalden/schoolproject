@@ -1,24 +1,16 @@
 <?php
 
-$db_server = "localhost";
-$db_user = "root";
-$db_pass = "";
-$db_name = "employee-forum";
-$conn = "";
-try{
-    $conn = mysqli_connect($db_server,
-    $db_user,
-    $db_pass,
-    $db_name);
 
+try
+{
+    $database = new PDO('mysql:host=localhost; dbname=employee-forum', 'root','');
+    echo "Connected to database";
 }
 
-catch(mysqli_sql_exception){
-
-    echo "Could not connect to database :(";
-
-
-};
+catch(PDOException)
+{
+    echo "Database is off";
+}
 
 
 ?>
