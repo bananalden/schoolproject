@@ -22,6 +22,8 @@ use function PHPSTORM_META\map;
     <input type="text" name="usn"><br>
     <label>Password:</label><br>
     <input type="password" name="pass"><br>
+    <label>Make account admin?</label>
+    <input type="radio" name="isAdmin"><br>
     <input type="submit" name="submit" value="Register">
 
     </form>
@@ -45,9 +47,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else {
         $sql = "INSERT INTO user_data (name, email, username, password) VALUES ('$name','$email','$username','$password') ";
         try{
-
-            echo "Succesfully registered!";
             mysqli_query($conn, $sql);
+            echo "Succesfully registered!";
         }
         
         
