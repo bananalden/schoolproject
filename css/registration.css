@@ -127,8 +127,8 @@ form {
     display: flex;
     position: relative;
     top: 10px;
-    color: red;
-    font-size: 200px;
+    color: #233142;
+    font-weight: bolder;
     letter-spacing: 2px;
 }
 
@@ -136,7 +136,7 @@ form {
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 67%;
+    left: 68%;
     bottom: 6.5px;
 }
 
