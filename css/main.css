@@ -8,7 +8,7 @@ body {
     color: whitesmoke;
 }
 
-/* form {
+form {
     background-color: #5585b5;      
     position: relative;
     top: 250px;
@@ -18,9 +18,9 @@ body {
     box-shadow: 10px 10px #dbd8e3;
     border-radius: 20px;
     padding: 20px 20px;
-} */
+}
 
-/* .uname {
+.uname {
     text-transform: uppercase;
     justify-content: center;
     display: flex;
@@ -81,4 +81,4 @@ body {
 #btn:hover {
     background-color: #f95959;
     color: black;
-} */
+}

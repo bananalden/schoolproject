@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <h1>Welcome to X employee login!</h1>
-<p>Already have an account? </p><a href="login.php">Click here to login</a>
+<p>Already have an account? </p><a href="otherpages/login.php">Click here to login</a>
 </body>
 </html>
