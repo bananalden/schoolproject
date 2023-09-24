@@ -8,17 +8,18 @@
 
 </head>
 <body>
-    <form id="login" action="login.php" method="post">
-        <div class="username">
-            <label>USERNAME:</label><br>
-            <input type="text" name="usn"><br>
+    <form action="login.php">
+        <div class="container-1">
+            <label class="uname" for="uname">Username:</label><br>
+            <input id="username" type="text" placeholder="Enter Your Username" name="uname">
         </div>
 
-        <div class="password">
-            <label>PASSWORD:</label><br>
-            <input type="password" name="pswd"><br>
+        <div class="container-2">
+            <label class="password" for="psword">Password:</label><br>
+            <input id="psw" type="text" placeholder="Enter Your Password" name="uname">
         </div>
-        <button class="btn" type="submit" value="log in">LOG IN</button>
+
+        <button id="btn" type="submit">login</button>
     </form>
 </body>
 </html>
