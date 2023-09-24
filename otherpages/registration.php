@@ -15,17 +15,31 @@ use function PHPSTORM_META\map;
 <body>
     <h1>User creation:</h1>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-    <label>Name:</label><br>
-    <input type="text" name="fname"><br>
-    <label>Email:</label><br>
-    <input type="text" name="email"><br>
-    <label>Username:</label><br>
-    <input type="text" name="usn"><br>
-    <label>Password:</label><br>
-    <input type="password" name="pass"><br>
-    <label>Make account admin?</label>
-    <input type="radio" name="isAdmin"><br>
-    <input type="submit" name="submit" value="Register">
+        <div class="name">
+            <label>Name:</label><br>
+            <input type="text" placeholder="Enter Your Name" name="fname"><br>
+        </div>
+    
+        <div class="email">
+            <label>Email:</label><br>
+            <input type="text" placeholder="Enter Your Email" name="email"><br>
+        </div>
+        
+        <div class="username">
+            <label>Username:</label><br>
+            <input type="text" placeholder="Enter Your Username" name="usn"><br>
+        </div>
+    
+        <div class="password">
+            <label>Password:</label><br>
+            <input type="password" placeholder="Enter Your Password" name="pass"><br>
+        </div>
+    
+        <div class="admin">
+            <label>Make account admin?</label>
+            <input class="circle" type="radio" name="isAdmin"><br>
+            <input class="register" type="submit" name="submit" value="Register">
+        </div>
 
     </form>
 </body>
