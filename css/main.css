@@ -70,6 +70,9 @@ form {
     left: 37%;
     letter-spacing: 2px;
     color: black;
+}
+
+.check:hover {
     cursor: pointer;
 }
 
