@@ -140,6 +140,10 @@ form {
     bottom: 6.5px;
 }
 
+.admin .circle:hover {
+    cursor: pointer;
+}
+
 .admin .register {
     align-items: center;
     text-transform: uppercase;
