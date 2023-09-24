@@ -72,10 +72,6 @@ form {
     color: black;
 }
 
-.check:hover {
-    cursor: pointer;
-}
-
 #btn {
     align-items: center;
     text-transform: uppercase;
