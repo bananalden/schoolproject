@@ -19,6 +19,10 @@
             <input id="psw" type="text" placeholder="Enter Your Password" name="uname">
         </div>
 
+        <label class="check">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+
         <button id="btn" type="submit">login</button>
     </form>
 </body>
