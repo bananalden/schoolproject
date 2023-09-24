@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>Welcome to X employee login!</h1>
-<p>Already have an account? </p><a href="login/login.php">Click here to login</a>
+<p>Already have an account? </p><a href="otherpages/login.php">Click here to login</a>
 </body>
 </html>
