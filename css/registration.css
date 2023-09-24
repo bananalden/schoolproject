@@ -138,9 +138,6 @@ form {
     position: relative;
     left: 68%;
     bottom: 6.5px;
-}
-
-.admin .circle:hover {
     cursor: pointer;
 }
 
