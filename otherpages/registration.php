@@ -41,6 +41,7 @@ use function PHPSTORM_META\map;
             <input class="register" type="submit" name="submit" value="Register">
         </div>
 
+        
     </form>
 </body>
 </html>
