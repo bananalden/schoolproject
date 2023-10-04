@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form action="login.php">
+    <form action="logcheck.php">
         <div class="container-1">
             <label class="uname" for="uname">Username:</label><br>
             <input id="username" type="text" placeholder="Enter Your Username" name="uname">
@@ -23,11 +23,3 @@
     </form>
 </body>
 </html>
-
-<?php 
-session_start();
-include_once 'backend/database.php';
-
-
-
-?>
