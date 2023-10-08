@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <form action="logcheck.php">
+    <form action="backend/logcheck.php" method="post">
         <div class="container-1">
             <label class="uname" for="uname">Username:</label><br>
             <input id="username" type="text" placeholder="Enter Your Username" name="uname">
@@ -16,7 +16,7 @@
 
         <div class="container-2">
             <label class="password" for="psword">Password:</label><br>
-            <input id="psw" type="text" placeholder="Enter Your Password" name="uname">
+            <input id="psw" type="text" placeholder="Enter Your Password" name="pword">
         </div>
 
         <button id="btn" type="submit">login</button>
