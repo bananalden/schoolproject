@@ -3,23 +3,13 @@
  $db_user = "root";
  $db_pass = "";
  $db_name = "employee-forum";
- $conn = "";
+ 
 
-try
-{
-   
 
-$conn = mysqli_connect($db_server,
-                        $db_user,
-                        $db_pass,
-                        $db_name);
+ $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
 
-}
-
-catch(mysqli_sql_exception)
-{
-    echo "Database is off";
-}
-
+ if(!$conn) {
+    die("Connection Failed: ". mysqli_connect_error());
+ }
 
 ?>
