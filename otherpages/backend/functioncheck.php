@@ -31,11 +31,12 @@ function invalidEmail($email){
 }
 
 function createUser($conn, $name, $email, $username, $password){
-    $sql = "INSERT INTO userlist (fullName, email, username, userPass) VALUES ($name, $email, $username, $password)";
+    $sql = "INSERT INTO userlist (fullName, email, username, userPass) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($conn);
 
-    if(!mysqli_stmt_init($stmt, $sql)){
-        header("Location: ../registration/php");
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
         exit();
     }
 
