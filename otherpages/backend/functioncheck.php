@@ -31,7 +31,7 @@ function invalidEmail($email){
 }
 
 function createUser($conn, $name, $email, $username, $password){
-    $sql = "INSERT INTO userlist (fullName, email, username, userPass) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO userlist (fullName, email, username, userPass) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -40,11 +40,13 @@ function createUser($conn, $name, $email, $username, $password){
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $password);
+    $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $pwdHashed);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     //NOTE TO PERSON WRITING THIS CODE: SEND REGISTRATION BACK TO ADMIN PAGE
-    header("Location:../login.php");
+    header("Location:../registration.php?error=none");
     exit();
 
     }
@@ -64,9 +66,54 @@ function createUser($conn, $name, $email, $username, $password){
         return $result;
     }
 
-  /*  function loginUser($conn, $username, $password){
-        $usernameExists
-    }
-        */
+//CHECKS IF USERNAME EXISTS
+    function userExists($conn, $username, $email){
+        $sql = "SELECT * FROM userlist WHERE username = ? OR email = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)){
+            header("location: ../registration.php?error=stmtfailed");
+            exit();
+        }
 
+        mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+        mysqli_stmt_execute($stmt);
+
+        $resultData = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($resultData)){
+            return $row;
+        }
+        
+        else{
+            $result = false;
+            return $result;
+        }
+        mysqli_stmt_close($stmt);
+
+    }
+
+    //USER LOGIN
+    function loginUser($conn, $username, $password){
+
+        $usernameExists = userExists($conn, $username, $username);
+
+        if ($usernameExists === false){
+            header("Location: ../login.php?error=wronglogin");
+            exit();
+        }
+
+        $pwdHashed = $usernameExists["userPass"];
+        $pwdCheck = password_verify($password, $pwdHashed);
+
+        if ($pwdCheck === false){
+            header("Location: ../login.php?error=wronglogin");
+            exit(); 
+        }
+
+        else if ($pwdCheck === true){
+            session_start();
+            $_SESSION["userId"] = $usernameExists["userID"];
+        }
+    }
+        
 ?>

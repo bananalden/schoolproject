@@ -24,6 +24,25 @@
     <label>No</label><br>
     <input type="submit" name="submit">
     </form>
+
+    <?php 
+    
+    if(isset($_GET["error"])){
+        if($_GET["error"] == "emptyinput"){
+            echo "<p>Some fields are empty, please fill!</p>";
+        }
+
+        else if ($_GET["error"] == "invalidemail"){
+            echo "<p>Email entered is invalid, please use valid email!</p>";
+        }
+
+        else if($_GET["error"] == "none"){
+            echo "<p>Account has been registered successfully</p>";
+        }
+
+    }
+    
+    ?>
 </body>
 </html>
 
