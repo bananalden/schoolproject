@@ -2,7 +2,7 @@
  $db_server = "localhost";
  $db_user = "root";
  $db_pass = "";
- $db_name = "employee-forum";
+ $db_name = "employee_forum";
  
 
 

@@ -31,7 +31,7 @@ function invalidEmail($email){
 }
 
 function createUser($conn, $name, $email, $username, $password){
-    $sql = "INSERT INTO user_data (name, email, username, password) VALUES ($name, $email, $username, $password";
+    $sql = "INSERT INTO userlist (fullName, email, username, userPass) VALUES ($name, $email, $username, $password)";
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_init($stmt, $sql)){
@@ -41,6 +41,9 @@ function createUser($conn, $name, $email, $username, $password){
 
     mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $password);
     mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("Location:../login.php");
+    exit();
 
     }
 
