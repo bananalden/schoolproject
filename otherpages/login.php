@@ -19,7 +19,7 @@
             <input id="psw" type="text" placeholder="Enter Your Password" name="pword">
         </div>
 
-        <button id="btn" type="submit">login</button>
+        <button id="btn" type="submit" name="submit">login</button>
     </form>
 </body>
 </html>

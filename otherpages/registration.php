@@ -23,7 +23,6 @@
     <input type="radio" name="isAdmin" value="notadmin">
     <label>No</label><br>
     <input type="submit" name="submit">
-
     </form>
 </body>
 </html>

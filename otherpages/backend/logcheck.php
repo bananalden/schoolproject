@@ -1,14 +1,23 @@
 <?php 
 
-include_once 'database.php';
+if(isset($_POST["submit"])){
+    $username = $_POST["uname"];
+    $password = $_POST["pword"];
 
-$username = $_POST["uname"];
-$password = $_POST["pword"];
+    require_once 'database.php';
+    require_once 'functioncheck.php';
 
+    if (emptyInputLogin($username, $password) !== false){
+        header("Location: ../login.php?error=emptyinput");
+        exit();
+    }
 
-echo $username.$password;
+    loginUser($conn, $username, $password);
 
-//header('Location: ../login.php');
+}
 
+else{
+    header("Location: ../login.php");
+}
 
 ?>

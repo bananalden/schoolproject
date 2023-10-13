@@ -43,12 +43,30 @@ function createUser($conn, $name, $email, $username, $password){
     mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $password);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+    //NOTE TO PERSON WRITING THIS CODE: SEND REGISTRATION BACK TO ADMIN PAGE
     header("Location:../login.php");
     exit();
 
     }
 
+    //CHECKS FOR EMPTY LOGIN INPUTS
+    function emptyInputLogin($username, $password){
+    
+        $result;
+    
+        if(empty($username) || empty($password)){
+            $result = true;
+        }
+        else{
+            $result = false;
+        }
+    
+        return $result;
+    }
 
-
+  /*  function loginUser($conn, $username, $password){
+        $usernameExists
+    }
+        */
 
 ?>
