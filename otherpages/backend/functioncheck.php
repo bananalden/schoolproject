@@ -113,6 +113,8 @@ function createUser($conn, $name, $email, $username, $password){
         else if ($pwdCheck === true){
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
+            header("location:/school/schoolproject/loginsuccesfultest.html");
+            exit();
         }
     }
         
