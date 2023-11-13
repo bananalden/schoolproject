@@ -109,7 +109,8 @@ function createUser($conn, $name, $email, $username, $password){
             header("Location: ../login.php?error=wronglogin");
             exit(); 
         }
-
+        //NOTE TO PROGRAMMER: ADD AN SQL QUERY THAT CHECKS ON THE LEVEL OF PRIVILEGE
+        //OF USER LOGGING IN IN THIS SECTION HERE
         else if ($pwdCheck === true){
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
@@ -117,5 +118,8 @@ function createUser($conn, $name, $email, $username, $password){
             exit();
         }
     }
-        
+
+    
+    //OTHER NOTE TO PROGRAMMER: MODIFY THE CODE SO THAT IT SOMEHOW MAKES TWO SQL QUERIES:
+    //ONE FOR THE MASTER USER LIST AND THE USERLIST THAT DICTATES THE PRIVILEGE LEVEL
 ?>
