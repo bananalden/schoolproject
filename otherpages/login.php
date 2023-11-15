@@ -16,7 +16,7 @@
 
         <div class="container-2">
             <label class="password" for="psword">Password:</label><br>
-            <input id="psw" type="text" placeholder="Enter Your Password" name="pword">
+            <input id="psw" type="password" placeholder="Enter Your Password" name="pword">
         </div>
 
         <button id="btn" type="submit" name="submit">login</button>
