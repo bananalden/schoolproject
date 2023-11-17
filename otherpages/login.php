@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="...">
+    <link rel="stylesheet" href="../css/login.css">
 
 </head>
 <body>
+    <div class="title">
+        <h1>Login User</h1>
+    </div>
     <form action="backend/logcheck.php" method="post">
         <div class="container-1">
             <label class="uname" for="uname">Username:</label><br>
