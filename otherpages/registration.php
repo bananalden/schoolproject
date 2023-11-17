@@ -3,26 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="../css/reg.css">
 </head>
 <body>
     <h1>User creation:</h1>
     <form action="backend/regcheck.php" method="post">
-    <label>Name:</label><br>
-    <input type="text" name="fname"><br>
-    <label>Email:</label><br>
-    <input type="text" name="email"><br>
-    <label>Username:</label><br>
-    <input type="text" name="usn"><br>
-    <label>Password:</label><br>
-    <input type="password" name="pass"><br>
-    <label>Make account admin?</label><br>
-    <input type="radio" name="isAdmin" value="admin">
-    <label>Yes</label>
-    <input type="radio" name="isAdmin" value="notadmin">
-    <label>No</label><br>
-    <input type="submit" name="submit">
+        
+        <div class="name":>
+            <label>Name:</label><br>
+            <input type="text" placeholder="Name" name="fname"><br>
+        </div>
+
+        <div class="email">
+            <label>Email:</label><br>
+            <input type="text" placeholder="Email" name="email"><br>
+        </div>
+        
+        <div class="username">
+            <label>Username:</label><br>
+            <input type="text" placeholder="Username" name="usn"><br>
+        </div>
+        
+        <div class="password">
+            <label>Password:</label><br>
+            <input type="password" placeholder="Password" name="pass"><br>
+        </div>
+        
+        <div class="tagline">
+            <label>Make account admin?</label><br> 
+        </div>
+    
+        <div class="yes">
+            <input type="radio" name = "ans" value="yes"> Yes </br>
+        </div>
+
+        <div class="no">
+            <input type="radio" name = "ans" value="no"> No </br>
+        </div>
+
+        <div id="btn">
+            <button type="submit" name="submit">Create User</button>
+        </div>
     </form>
 
     <?php 

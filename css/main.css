@@ -62,7 +62,7 @@ form {
     outline: none;
 }
 
-.check {
+/* .check {
     font-size: 15;
     font-weight: bolder;
     position: relative;
@@ -70,9 +70,9 @@ form {
     left: 37%;
     letter-spacing: 2px;
     color: black;
-}
+} */
 
-#btn {
+/* #btn button {
     align-items: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -93,4 +93,4 @@ form {
 #btn:hover {
     background-color: #f95959;
     color: black;
-}
+} */
