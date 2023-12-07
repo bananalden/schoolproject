@@ -112,10 +112,40 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
         //NOTE TO PROGRAMMER: ADD AN SQL QUERY THAT CHECKS ON THE LEVEL OF PRIVILEGE
         //OF USER LOGGING IN IN THIS SECTION HERE
         else if ($pwdCheck === true){
+            //RESEARCH HOW TO SEARCH FOR STATEMENT TO CHECK FOR IDs
+        $sql = "SELECT * FROM userlist WHERE username = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)){
+            header("location: ../registration.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        
+        $resultData = mysqli_stmt_get_result($stmt);
+        $checkAdmin = mysqli_fetch_assoc($resultData);
+
+        $isAdmin = $checkAdmin["admincheck"];
+
+        if ($isAdmin = "admin"){
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
             header("location:/school/schoolproject/loginsuccesfultest.html");
+
+        }
+
+        else{
+
+
+        }
+            
+           
             exit();
+
+             /*session_start();
+            $_SESSION["userId"] = $usernameExists["userID"];
+            header("location:/school/schoolproject/loginsuccesfultest.html");*/
         }
     }
 
