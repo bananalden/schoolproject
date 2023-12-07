@@ -120,7 +120,7 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
             exit();
         }
 
-        mysqli_stmt_bind_param($stmt, "i", $username);
+        mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
         
         $resultData = mysqli_stmt_get_result($stmt);
@@ -132,14 +132,14 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
         if ($isAdmin == "admin"){
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
-            header("location:/school/schoolproject/loginsuccesfultest.html");
+            header("location:/schoolProject/schoolproject/loginsuccesfultest.html");
 
         }
 
         else{
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
-            header("location:/school/schoolproject/error.html");
+            header("location:/schoolProject/schoolproject/error.html");
 
         }
             
