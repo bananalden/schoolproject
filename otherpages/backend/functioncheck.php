@@ -30,8 +30,8 @@ function invalidEmail($email){
     return $result;
 }
 
-function createUser($conn, $name, $email, $username, $password){
-    $sql = "INSERT INTO userlist (fullName, email, username, userPass) VALUES (?, ?, ?, ?);";
+function createUser($conn, $name, $email, $username, $password, $adminpriv){
+    $sql = "INSERT INTO userlist (fullName, email, username, userPass, admincheck) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -42,7 +42,7 @@ function createUser($conn, $name, $email, $username, $password){
 
     $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $pwdHashed);
+    mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $username, $pwdHashed, $adminpriv);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     //NOTE TO PERSON WRITING THIS CODE: SEND REGISTRATION BACK TO ADMIN PAGE
@@ -112,10 +112,43 @@ function createUser($conn, $name, $email, $username, $password){
         //NOTE TO PROGRAMMER: ADD AN SQL QUERY THAT CHECKS ON THE LEVEL OF PRIVILEGE
         //OF USER LOGGING IN IN THIS SECTION HERE
         else if ($pwdCheck === true){
+            //RESEARCH HOW TO SEARCH FOR STATEMENT TO CHECK FOR IDs
+        $sql = "SELECT * FROM userlist WHERE username = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)){
+            header("location: ../registration.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        
+        $resultData = mysqli_stmt_get_result($stmt);
+        $checkAdmin = mysqli_fetch_assoc($resultData);
+
+        $isAdmin = $checkAdmin["admincheck"];
+        mysqli_stmt_close($stmt);
+        //THIS IS IF THE LOGIN DETECTS IF YOU ARE NOT ADMIN
+        if ($isAdmin == "admin"){
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
-            header("location:/school/schoolproject/loginsuccesfultest.html");
+            header("location:/schoolProject/schoolproject/loginsuccesfultest.html");
+
+        }
+
+        else{
+            session_start();
+            $_SESSION["userId"] = $usernameExists["userID"];
+            header("location:/schoolProject/schoolproject/error.html");
+
+        }
+            
+           
             exit();
+
+             /*session_start();
+            $_SESSION["userId"] = $usernameExists["userID"];
+            header("location:/school/schoolproject/loginsuccesfultest.html");*/
         }
     }
 

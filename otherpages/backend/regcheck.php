@@ -4,6 +4,7 @@ if(isset($_POST["submit"])){
    $email = $_POST["email"];
    $username = $_POST["usn"];
    $password = $_POST["pass"];
+   $adminpriv = $_POST["isAdmin"];
 
    require_once 'database.php';
    require_once 'functioncheck.php';
@@ -19,7 +20,7 @@ if(isset($_POST["submit"])){
         exit();
    }
    //Function that puts in user info into database
-   createuser($conn, $name, $email, $username, $password);
+   createuser($conn, $name, $email, $username, $password, $adminpriv);
 }
 
 else {
