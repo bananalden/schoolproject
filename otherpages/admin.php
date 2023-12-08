@@ -12,6 +12,11 @@
             header("location:login.php");
       }
 
+      if($adminuser != "admin"){
+            session_destroy();
+            header("location:login.php");
+      }
+
 ?>
 
 <html>
@@ -25,17 +30,17 @@
             
       
 <div class="button-container"> 
-      <a class="create-button">Create User</a>
+      <a class="create-button" href="registration.php">Create User</a>
       <a class="logout-button" href="logout.php">LOG OUT</a>
 </div>
 
 
       <nav class="nav-bar">
             <ul>
-                  <li><a href="">UserId</a></li>
-                  <li><a href="">Name</a></li>
-                  <li><a href="">Username</a></li>
-                  <li><a href="">Action</a></li>
+                  <li>UserId</li>
+                  <li>Name</li>
+                  <li>>Username</li>
+                  <li>Action</li>
             </ul>
       </nav>
 </body>
