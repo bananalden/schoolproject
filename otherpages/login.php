@@ -26,3 +26,16 @@
     </form>
 </body>
 </html>
+
+<?php
+if(isset($_GET["error"])){
+        if($_GET["error"] == "emptyinput"){
+            echo "<p>Some fields are empty, please fill!</p>";
+        }
+
+        else if ($_GET["error"] == "wronglogin"){
+            echo "<p>Username/Email or password is wrong, please try again</p>";
+        }
+
+    }
+    ?>
