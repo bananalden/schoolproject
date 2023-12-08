@@ -7,9 +7,9 @@
 
     
 
-      if (empty($loggedin) || empty($loggedin) || empty($loggedin) || empty($loggedin)){
+      if (empty($loggedin)){
             session_destroy();
-            header("location:login.php");
+            header("location:../index.php");
       }
 
       if($adminuser != "admin"){
