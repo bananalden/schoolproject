@@ -132,7 +132,8 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
         if ($isAdmin == "admin"){
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
-            header("location:/schoolProject/schoolproject/loginsuccesfultest.html");
+            $_SESSION["admincheck"] = $isAdmin;
+            header("location:../admin.php");
 
         }
 
