@@ -2,22 +2,15 @@
     session_start();
     $userID = $_SESSION["userId"];
     $adminuser = $_SESSION["admincheck"];
+    $fullname = $_SESSION["fullName"];
+    $loggedin = $_SESSION["isloggedin"];
 
-if (isset($userID)){
+    
 
-    if ($adminuser != "admin")
-    {
-        session_destroy();
-        header("location:../otherpages/login.php");
-    }
-
-
-}
-else{
-    session_destroy();
-    header("location:../otherpages/login.php");
-}
-
+      if (empty($loggedin) || empty($loggedin) || empty($loggedin) || empty($loggedin)){
+            session_destroy();
+            header("location:login.php");
+      }
 
 ?>
 
@@ -33,7 +26,7 @@ else{
       
 <div class="button-container"> 
       <a class="create-button">Create User</a>
-      <a class="logout-button">LOG OUT</a>
+      <a class="logout-button" href="logout.php">LOG OUT</a>
 </div>
 
 
