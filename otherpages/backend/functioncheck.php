@@ -109,30 +109,34 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
             header("Location: ../login.php?error=wronglogin");
             exit(); 
         }
-        //NOTE TO PROGRAMMER: ADD AN SQL QUERY THAT CHECKS ON THE LEVEL OF PRIVILEGE
-        //OF USER LOGGING IN IN THIS SECTION HERE
-        else if ($pwdCheck === true){
-            //RESEARCH HOW TO SEARCH FOR STATEMENT TO CHECK FOR IDs
-        $sql = "SELECT * FROM userlist WHERE username = ?;";
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)){
-            header("location: ../registration.php?error=stmtfailed");
-            exit();
-        }
-
-        mysqli_stmt_bind_param($stmt, "s", $username);
-        mysqli_stmt_execute($stmt);
         
-        $resultData = mysqli_stmt_get_result($stmt);
-        $checkAdmin = mysqli_fetch_assoc($resultData);
+        else if ($pwdCheck === true){
+            $sql = "SELECT * FROM userlist WHERE username = ?;";
+            $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)){
+                    header("location: ../registration.php?error=stmtfailed");
+                    exit();
+                    }
 
-        $isAdmin = $checkAdmin["admincheck"];
-        mysqli_stmt_close($stmt);
+                    mysqli_stmt_bind_param($stmt, "s", $username);
+                    mysqli_stmt_execute($stmt);
+        
+            $resultData = mysqli_stmt_get_result($stmt);
+            $checkAdmin = mysqli_fetch_assoc($resultData);
+
+            $isAdmin = $checkAdmin["admincheck"];
+            $fullname = $checkAdmin["fullName"];
+            mysqli_stmt_close($stmt);
         //THIS IS IF THE LOGIN DETECTS IF YOU ARE NOT ADMIN
         if ($isAdmin == "admin"){
+            //i literally have no idea why i have to declare the fact that the session has
+            //started twice someone help me on this
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
-            header("location:/schoolProject/schoolproject/loginsuccesfultest.html");
+            $_SESSION["admincheck"] = $isAdmin;
+            $_SESSION["fullName"] = $fullname;
+            $_SESSION["isloggedin"] = true;
+            header("location:../admin.php");
 
         }
 
@@ -142,17 +146,11 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
             header("location:/schoolProject/schoolproject/error.html");
 
         }
-            
-           
+       
             exit();
 
-             /*session_start();
-            $_SESSION["userId"] = $usernameExists["userID"];
-            header("location:/school/schoolproject/loginsuccesfultest.html");*/
         }
     }
 
     
-    //OTHER NOTE TO PROGRAMMER: MODIFY THE CODE SO THAT IT SOMEHOW MAKES TWO SQL QUERIES:
-    //ONE FOR THE MASTER USER LIST AND THE USERLIST THAT DICTATES THE PRIVILEGE LEVEL
 ?>
