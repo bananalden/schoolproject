@@ -42,10 +42,10 @@
             <input type="radio" name = "ans" value="no"> No </br>
         </div>
 
-        <!-- <div id="btn">
+        <div id="btn">
             <button type="submit" name="submit">Create User</button>
             <button class="back-btn" onclick="history.back()">Go Back</button>
-        </div> -->
+        </div>
 
     </form>
 
