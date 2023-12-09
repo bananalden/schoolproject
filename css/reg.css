@@ -165,7 +165,7 @@ p {
     color: #f95959;
 }
 
-#btn {
+.btn {
     justify-content: center;
     display: flex;
     margin-top: 35px;
@@ -182,6 +182,7 @@ button {
     width: 15%;
     cursor: pointer;
     transition: 0.3s;
+    justify-content: space-between;
 }
 
 button:hover {

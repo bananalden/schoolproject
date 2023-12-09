@@ -44,7 +44,9 @@
 
         <div id="btn">
             <button type="submit" name="submit">Create User</button>
+            <button class="back-btn" onclick="history.back()">Go Back</button>
         </div>
+
     </form>
 
     <?php 
