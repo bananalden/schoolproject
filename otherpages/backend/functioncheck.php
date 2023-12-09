@@ -143,7 +143,7 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
         else{
             session_start();
             $_SESSION["userId"] = $usernameExists["userID"];
-            header("location:/schoolProject/schoolproject/error.html");
+            header("location:/schoolproject/error.html");
 
         }
        
