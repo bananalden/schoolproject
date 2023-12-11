@@ -86,7 +86,7 @@ td, th {
       cursor: pointer;  
 }
 
-.update-button {
+/* .update-button {
       height: 100%;
       width: 120px;
       background-color: #3d81ff;
@@ -98,20 +98,23 @@ td, th {
       text-align: center;
       text-decoration: none;
       color: white;
+} */
+
+.update-delete {
+    line-height: 40px;
+    margin-top: 10px; 
 }
 
-.delete-button {
+.update, .delete {
       height: 100%;
       width: 120px;
       background-color: #d40b0b;
       font-family: 'Poppins',sans-serif;
       border-radius: 20px;
       display: inline-block;
-      place-items: center;
       text-align: center;
       font-size: 16px;
       text-decoration: none;
       color: white;
 }
-
 
