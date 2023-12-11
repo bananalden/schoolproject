@@ -10,7 +10,7 @@
 <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
+      <form action="backend/regcheck.php" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
