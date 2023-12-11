@@ -15,52 +15,41 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Enter your name" name="fname">
           </div>
           <div class="input-box">
             <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+            <input type="text" placeholder="Enter your username" name="usn">
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input type="text" placeholder="Enter your email" name="email">
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input type="password" placeholder="Enter your password" name="pass">
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="isAdmin" id="dot-1" value="admin">
+          <input type="radio" name="isAdmin" id="dot-2" value="notadmin">
           <span class="gender-title">Admin</span>
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
-            <span class="gender">Male</span>
+            <span class="gender">Yes</span>
           </label>
           <label for="dot-2">
             <span class="dot two"></span>
-            <span class="gender">Female</span>
+            <span class="gender">No</span>
           </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
+
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
-          <input type="submit" value="Back">
+          <input type="submit" value="submit" name="submit">
+          <a href="admin.php">Back to Admin Page</a>
+         <!-- <input type="submit" value="Back" href="admin.php"> -->
         </div>
       </form>
     </div>
@@ -111,20 +100,6 @@
     
     require 'backend/adminauthentication.php';
 
-    if(isset($_GET["error"])){
-        if($_GET["error"] == "emptyinput"){
-            echo "<p>Some fields are empty, please fill!</p>";
-        }
-
-        else if ($_GET["error"] == "invalidemail"){
-            echo "<p>Email entered is invalid, please use valid email!</p>";
-        }
-
-        else if($_GET["error"] == "none"){
-            echo "<p>Account has been registered successfully</p>";
-        }
-
-    }
     
     ?>
 </body>

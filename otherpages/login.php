@@ -16,36 +16,21 @@
     <div class="title">
         <h1> Employee Login Form </h1>   
     </div>
-    <form>  
+    <form  action="backend/logcheck.php" method="post">  
     <div class="container">   
             <div class="user-details">
                 <label>Username : </label>   
-                <input type="text" placeholder="Enter Username" name="username" required>
+                <input type="text" placeholder="Enter Username" name="uname" required>
             </div>
 
             <div class="user-details">
                 <label>Password : </label>   
-                <input type="password" placeholder="Enter Password" name="password" required>
+                <input type="password" placeholder="Enter Password" name="pword" required>
             </div>  
 
-            <button type="submit">Login</button>   
-            <input type="checkbox" checked="checked" class="remember"> Remember me   
-            <button type="button" class="cancelbtn"> Cancel</button>   
-            Forgot <a href="#"> password? </a>   
+            <button type="submit" name="submit">Login</button>   
         </div>   
     </form>  
 </body>
 </html>
 
-<?php
-if(isset($_GET["error"])){
-        if($_GET["error"] == "emptyinput"){
-            echo "<p>Some fields are empty, please fill!</p>";
-        }
-
-        else if ($_GET["error"] == "wronglogin"){
-            echo "<p>Username/Email or password is wrong, please try again</p>";
-        }
-
-    }
-    ?>

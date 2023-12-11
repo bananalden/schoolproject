@@ -46,7 +46,7 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     //NOTE TO PERSON WRITING THIS CODE: SEND REGISTRATION BACK TO ADMIN PAGE
-    header("Location:../registration.php?error=none");
+    header("Location:../admin.php?error=none");
     exit();
 
     }
