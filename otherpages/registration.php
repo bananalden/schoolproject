@@ -9,6 +9,7 @@
 <body>
 <div class="container">
     <div class="title">Registration</div>
+    
     <div class="content">
       <form action="backend/regcheck.php" method="post">
         <div class="user-details">
