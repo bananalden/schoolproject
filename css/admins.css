@@ -86,35 +86,18 @@ td, th {
       cursor: pointer;  
 }
 
-/* .update-button {
+/* ----- TABLE BUTTON ----- */
+
+
+.update, .delete{
       height: 100%;
       width: 120px;
-      background-color: #3d81ff;
-      font-family: 'Poppins',sans-serif;
-      border-radius: 20px;
-      display: inline-block;
-      place-items: center;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-} */
-
-.update-delete {
-    line-height: 40px;
-    margin-top: 10px; 
-}
-
-.update, .delete {
-      height: 100%;
-      width: 120px;
-      background-color: #d40b0b;
+      background-color: #f95959;
       font-family: 'Poppins',sans-serif;
       border-radius: 20px;
       display: inline-block;
       text-align: center;
       font-size: 16px;
       text-decoration: none;
-      color: white;
+      color: black;
 }
-
