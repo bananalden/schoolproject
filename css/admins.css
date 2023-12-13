@@ -56,7 +56,7 @@ td, th {
 .create-button, .logout-button{
       height: 100%;
       width: 120px;
-      background-color: #f95959;
+      background: linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
       font-family: 'Poppins',sans-serif;
       border-radius: 20px;
       display: grid;
@@ -68,19 +68,19 @@ td, th {
 
 .logout-button{
     
-      background-color: #f95959;
+      background: linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
       
 }
 
 .create-button:hover {
-      background-color: #c7b198;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
       color: black;
       transition: 0.3s;
       cursor: pointer;
 }
 
 .logout-button:hover {
-      background-color: #c7b198;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
       color: black;
       transition: 0.3s;
       cursor: pointer;  
@@ -88,11 +88,21 @@ td, th {
 
 /* ----- TABLE BUTTON ----- */
 
-
+.table-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      height: 80%;
+      width: 80%;
+      border: none;
+      outline: none;
+      position: relative;
+      bottom: 3px;
+}
 .update, .delete{
       height: 100%;
       width: 120px;
-      background-color: #f95959;
+      background: linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
       font-family: 'Poppins',sans-serif;
       border-radius: 20px;
       flex-direction: column;
@@ -102,4 +112,12 @@ td, th {
       font-size: 16px;
       text-decoration: none;
       color: black;
+}
+
+.update:hover {
+      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+.delete:hover {
+      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
