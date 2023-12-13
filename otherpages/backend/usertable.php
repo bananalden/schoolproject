@@ -15,7 +15,7 @@ if($result){
     <td>'.$name.'</td>
     <td>'.$username.'</td>
     <td>'.$email.'</td>
-    <td><a class="update">UPDATE</a><a class="delete">DELETE</a></td>
+    <td><a class="update" href="update.php?getID='.$id.'">UPDATE</a><a class="delete" id="delete-button" href="backend/delete.php?userID='.$id.'">DELETE</a></td>
     </tr>';
            
     }
