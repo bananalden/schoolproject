@@ -142,6 +142,7 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
 
         else{
             session_start();
+            $_SESSION["istimedin"] = false;
             $_SESSION["userId"] = $usernameExists["userID"];
             header("location:/schoolproject/error.html");
 
