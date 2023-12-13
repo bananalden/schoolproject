@@ -16,7 +16,6 @@ require 'backend/adminauthentication.php';
       <a class="create-button" href="registration.php">Create User</a>
       <a class="logout-button" href="logout.php">LOG OUT</a>
 </div>
-<<<<<<< Updated upstream
       <table class="content">
             <tr class="header">
                   <th>User ID</th>
@@ -43,17 +42,5 @@ require 'backend/adminauthentication.php';
                   <li>Action</li>
             </ul>
       </nav> -->
-=======
-      <nav class="nav-bar">
-            <table>
-                  <tr>
-                        <th>User ID</th>
-                        <th>Name</th>
-                        <th>Username</th>
-                        <th>Action</th>
-                  </tr>
-            </table>
-                 
->>>>>>> Stashed changes
 </body>
 </html>

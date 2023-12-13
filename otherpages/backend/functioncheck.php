@@ -142,7 +142,6 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
 
         else{
             session_start();
-            $_SESSION["istimedin"] = false;
             $_SESSION["userId"] = $usernameExists["userID"];
             header("location:/schoolproject/error.html");
 
@@ -153,7 +152,8 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
         }
     }
 
-    function updateUser($conn, $name, $email, $username, $password, $adminpriv){
+    //FUNCTION FOR UPDATING USERS
+   /* function updateUser($conn, $name, $email, $username, $password, $adminpriv){
         $sql = "INSERT INTO userlist (fullName, email, username, userPass, admincheck) VALUES (?, ?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
     
@@ -174,5 +174,5 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
     
         }
     
-    
+    */
 ?>
