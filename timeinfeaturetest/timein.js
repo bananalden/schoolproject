@@ -17,12 +17,16 @@ function timeIn (){
     else {
      $("#timeout").prop("disabled", false);
      $("#timein").prop("disabled", true);
-     alert("Data entered" + value);
+   $.ajax({
+    url : "inserttable.php",
+    type : "POST",
+    data : { value : value },
+    success: function(response){
+        alert("Data has passed through");
+    }
 
-     $.post( 
-        "inserttable.php",
-        { val: value}
-          );
+
+   });
 }
 }
 
@@ -37,8 +41,14 @@ function timeOut (){
     else {
      $("#timeout").prop("disabled", true);
      $("#timein").prop("disabled", false);
-     alert("Data entered");
+     $.ajax({
+        url : "inserttable.php",
+        type : "POST",
+        data : { value : value },
+        success: function(response){
+            alert("Data has passed through");
+        }
 
-    }
+    })
 }
-
+}
