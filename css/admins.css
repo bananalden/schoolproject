@@ -117,3 +117,10 @@ td, th {
       text-decoration: none;
       color: white;
 }
+
+.delete:hover{
+      background-color: #ff9d9d;
+      color: white;
+      transition: 0.3s;
+      cursor: pointer;  
+}
