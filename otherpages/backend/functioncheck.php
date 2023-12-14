@@ -152,6 +152,10 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
         }
     }
 
+
+    function deleteUser($conn, $id){
+
+    }
     //FUNCTION FOR UPDATING USERS
    /* function updateUser($conn, $name, $email, $username, $password, $adminpriv){
         $sql = "INSERT INTO userlist (fullName, email, username, userPass, admincheck) VALUES (?, ?, ?, ?, ?);";
