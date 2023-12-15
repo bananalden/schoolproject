@@ -101,8 +101,8 @@ td, th {
 }
 .update, .delete{
       height: 100%;
-      width: 120px;
-      background: linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
+      width: 100px;
+      background: #5585b5;
       font-family: 'Poppins',sans-serif;
       border-radius: 20px;
       flex-direction: column;
@@ -111,13 +111,19 @@ td, th {
       text-align: center;
       font-size: 16px;
       text-decoration: none;
-      color: black;
+      color: whitesmoke;
+}
+
+.delete {
+      background: #dc2f2f;
 }
 
 .update:hover {
       background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+      cursor: pointer;
 }
 
 .delete:hover {
       background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+      cursor: pointer;
 }
