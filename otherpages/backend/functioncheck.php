@@ -153,12 +153,9 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
     }
 
 
-    function deleteUser($conn, $id){
-
-    }
     //FUNCTION FOR UPDATING USERS
-   /* function updateUser($conn, $name, $email, $username, $password, $adminpriv){
-        $sql = "INSERT INTO userlist (fullName, email, username, userPass, admincheck) VALUES (?, ?, ?, ?, ?);";
+function updateUser($conn, $name, $email, $username, $password, $adminpriv, $userID){
+        $sql = "UPDATE userlist SET fullName = ?, email = ?, username = ?, userPass = ?, admincheck = ? WHERE userID = ?;";
         $stmt = mysqli_stmt_init($conn);
     
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -169,7 +166,7 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
     
         $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
     
-        mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $username, $pwdHashed, $adminpriv);
+        mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $username, $pwdHashed, $adminpriv, $userID);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
        
@@ -178,5 +175,5 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
     
         }
     
-    */
+
 ?>

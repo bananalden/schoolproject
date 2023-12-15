@@ -11,28 +11,29 @@
     <div class="title">User Update</div>
     
     <div class="content">
-      <form action="" method="post">
+      <form action="backend/updatecheck.php" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Update user's full name" name="fname">
+            <input type="text" placeholder="Update user's full name" name="fname" required>
           </div>
           <div class="input-box">
             <span class="details">Username</span>
-            <input type="text" placeholder="Update user's username" name="usn">
+            <input type="text" placeholder="Update user's username" name="usn" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" name="email">
+            <input type="email" placeholder="Enter your email" name="email" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="password" placeholder="Enter your password" name="pass">
+            <input type="password" placeholder="Enter your password" name="pass" required>
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="isAdmin" id="dot-1" value="admin">
-          <input type="radio" name="isAdmin" id="dot-2" value="notadmin">
+          <input type="radio" name="isAdmin" id="dot-1" value="admin" required>
+          <input type="radio" name="isAdmin" id="dot-2" value="notadmin" required>
+          <input type="hidden" name="getID" value="<?php $getID; ?>">;
           <span class="gender-title">Admin</span>
           <div class="category">
             <label for="dot-1">
@@ -54,3 +55,5 @@
       </form>
     </div>
   </div>
+
+  <?php $getID = $_GET["updateID"];?>
