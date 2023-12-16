@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update User</title>
@@ -11,7 +12,7 @@
     <div class="title">User Update</div>
     
     <div class="content">
-      <form action="backend/updatecheck.php" method="post">
+      <form action="backend/updatecheck.php?updateID=<?php echo $_GET["updateID"] ;?>" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
@@ -56,4 +57,4 @@
     </div>
   </div>
 
-  <?php $getID = $_GET["updateID"];?>
+ 
