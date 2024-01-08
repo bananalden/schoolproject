@@ -1,9 +1,10 @@
 <?php 
+session_start();
 include 'database.php';
 $text = $_POST["value"];
 if(isset($_POST)){
     
-    
+    $_SESSION["isTimedin"] = $_POST["isTimedin"];
     
     $sql = "INSERT INTO insertdata (poopoofart) VALUES (?);";
     $stmt = mysqli_stmt_init($conn);
@@ -14,6 +15,8 @@ if(isset($_POST)){
     mysqli_stmt_bind_param($stmt, "s", $text);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+
+    
 }
 
 
