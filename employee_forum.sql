@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2023 at 08:03 AM
+-- Generation Time: Jan 10, 2024 at 11:38 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -53,8 +53,20 @@ INSERT INTO `userlist` (`userID`, `fullName`, `email`, `username`, `userPass`, `
 CREATE TABLE `usertimein` (
   `timeKey` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
-  `dateEntered` date NOT NULL,
-  `timeEntered` time NOT NULL
+  `enteredDateTime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usertimeout`
+--
+
+CREATE TABLE `usertimeout` (
+  `timeKey` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `enteredTimekey` int(11) NOT NULL,
+  `timeout` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -71,7 +83,15 @@ ALTER TABLE `userlist`
 -- Indexes for table `usertimein`
 --
 ALTER TABLE `usertimein`
+  ADD PRIMARY KEY (`timeKey`),
   ADD KEY `userIDPK` (`userID`);
+
+--
+-- Indexes for table `usertimeout`
+--
+ALTER TABLE `usertimeout`
+  ADD PRIMARY KEY (`timeKey`),
+  ADD KEY `userIDPKTimeOut` (`userID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -84,6 +104,18 @@ ALTER TABLE `userlist`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `usertimein`
+--
+ALTER TABLE `usertimein`
+  MODIFY `timeKey` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `usertimeout`
+--
+ALTER TABLE `usertimeout`
+  MODIFY `timeKey` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -92,6 +124,12 @@ ALTER TABLE `userlist`
 --
 ALTER TABLE `usertimein`
   ADD CONSTRAINT `userIDPK` FOREIGN KEY (`userID`) REFERENCES `userlist` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `usertimeout`
+--
+ALTER TABLE `usertimeout`
+  ADD CONSTRAINT `userIDPKTimeOut` FOREIGN KEY (`userID`) REFERENCES `userlist` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
