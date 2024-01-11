@@ -7,15 +7,15 @@ $getID = $_GET["updateID"];
 
 if(isset($_POST["submit"])){
 
-        $name = $_POST["fname"];
-        $username = $_POST["usn"];
-        $email = $_POST["email"];
-        $password = $_POST["pass"];
-        $admincheck = $_POST["isAdmin"];
+    $name = $_POST["fname"];
+    $empID = $_POST["empID"];
+    $department = $_POST["dept"];
+    $position = $_POST["posit"];
+    $empStatus = $_POST["status"];
     
-        $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
+        
     
-        $sql = "UPDATE userlist SET fullName = '$name', email = '$email', userPass= '$pwdHashed', admincheck = '$admincheck' WHERE userID = $getID;";
+        $sql = "UPDATE userlist SET empID = '$empID', fullName = '$name', dept= '$department', position = '$position', empStatus = '$empStatus' WHERE empID = '$getID';";
     
         $result = mysqli_query($conn, $sql);
     

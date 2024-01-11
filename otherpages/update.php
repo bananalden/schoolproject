@@ -11,7 +11,7 @@
     <div class="title">Update User</div>
     
     <div class="content">
-      <form action="backend/updatecheck?updateID=<?php echo $_GET["updateID"] ;?>.php" method="post">
+      <form action="backend/updatecheck.php?updateID=<?php echo $_GET["updateID"]; ?>" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Employee ID</span>

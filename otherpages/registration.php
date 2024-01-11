@@ -26,7 +26,7 @@
             <select name="dept" id="cars">
                 <option value="ITdept">IT Department</option>
                 <option value="accountDept">Accounting</option>
-                <option value="humResource">Mercedes</option>
+                <option value="humResource">Human Resources</option>
                 <option value="markDept">Marketing Department</option>
             </select>
           </div>

@@ -15,6 +15,7 @@ if($result){
         $dep = renameDep($department);
         $position = renamePos($pos);
         $status = renameStat($empStatus);
+        $test = "poopoo";
 
 
         echo '<tr>
@@ -23,7 +24,7 @@ if($result){
         <td>'.$dep.'</td>
         <td>'.$position.'</td>
         <td>'.$status.'</td>
-        <td><a class="update" href="update.php?updateID="'.$id.'">UPDATE</a><a class="delete" id="delete-button" href="backend/delete.php?getID='.$id.'">DELETE</a></td>
+        <td><a class="update" href="update.php?updateID='.$id.'">UPDATE</a><a class="delete" id="delete-button" href="backend/delete.php?getID='.$id.'">DELETE</a></td>
         </tr>';
                
     
