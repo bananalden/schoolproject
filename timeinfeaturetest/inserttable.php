@@ -6,7 +6,7 @@ if(isset($_POST)){
     
     $_SESSION["isTimedin"] = $_POST["isTimedin"];
     
-    $sql = "INSERT INTO insertdata (poopoofart) VALUES (?);";
+    $sql = "INSERT INTO insertdata (thisisatest) VALUES (?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
 

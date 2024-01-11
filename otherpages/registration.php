@@ -14,34 +14,36 @@
       <form action="backend/regcheck.php" method="post">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" name="fname">
+            <span class="details">Employee ID</span>
+            <input type="text" placeholder="Enter employee ID" name="empID">
           </div>
           <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" name="usn">
+            <span class="details">Full name</span>
+            <input type="text" placeholder="Enter your Full Name" name="fname">
           </div>
           <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" name="email">
+            <span class="dept">Department</span>
+            <select name="dept" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
           </div>
           <div class="input-box">
-            <span class="details">Password</span>
-            <input type="password" placeholder="Enter your password" name="pass">
-          </div>
         </div>
         <div class="gender-details">
           <input type="radio" name="isAdmin" id="dot-1" value="admin">
           <input type="radio" name="isAdmin" id="dot-2" value="notadmin">
-          <span class="gender-title">Admin</span>
+          <span class="gender-title">Status</span>
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
-            <span class="gender">Yes</span>
+            <span class="gender">Part Time</span>
           </label>
           <label for="dot-2">
             <span class="dot two"></span>
-            <span class="gender">No</span>
+            <span class="gender">Full Time</span>
           </label>
 
           </div>
@@ -98,7 +100,7 @@
 
     <?php 
     
-    require 'backend/adminauthentication.php';
+    //require 'backend/adminauthentication.php';
 
     
     ?>

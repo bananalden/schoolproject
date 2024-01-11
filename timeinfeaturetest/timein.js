@@ -1,6 +1,9 @@
+
+
 $(document).ready(function(){
 
-    $("#timeout").prop("disabled", true);
+
+
 
     $("#timein").on("click",timeIn);
     $("#timeout").on("click",timeOut);
@@ -9,15 +12,21 @@ $(document).ready(function(){
 
 function timeIn (){
     var confirmation = confirm("Do you want to time in now?");
-    var value = $(this).val();
+    let yourDate = new Date();
+    var curr_date = yourDate.getDate();
+    var curr_month = yourDate.getMonth() + 1; //Months are zero based
+    var curr_year = yourDate.getFullYear()
+    var Hour = yourDate.getHours();
+    var Minutes = yourDate.getMinutes();
+    var Seconds = yourDate.getSeconds();
+    var dateTime = curr_date + "-" + curr_month + "-" + curr_year  + Hour + ':' + Minutes + ":" + Seconds;
+    var value = dateTime;
     var isTimedin = "Gregor";
     if (confirmation != true){
      alert("Data not entered")
     }
 
     else {
-     $("#timeout").prop("disabled", false);
-     $("#timein").prop("disabled", true);
    $.ajax({
     url : "inserttable.php",
     type : "POST",
@@ -35,15 +44,22 @@ function timeIn (){
 
 function timeOut (){
     var confirmation = confirm("Do you want to time out now?");
-    var value = $(this).val();
+    let yourDate = new Date();
+    var curr_date = yourDate.getDate();
+    var curr_month = yourDate.getMonth() + 1; //Months are zero based
+    var curr_year = yourDate.getFullYear()
+    var Hour = yourDate.getHours();
+    var Minutes = yourDate.getMinutes();
+    var Seconds = yourDate.getSeconds();
+    var dateTime = curr_date + "-" + curr_month + "-" + curr_year  + Hour + ':' + Minutes + ":" + Seconds;
+    var value = dateTime;
     var isTimedin = "Yi Sang";
     if (confirmation != true){
      alert("Data not entered")
     }
 
     else {
-     $("#timeout").prop("disabled", true);
-     $("#timein").prop("disabled", false);
+    
      $.ajax({
         url : "inserttable.php",
         type : "POST",
@@ -53,7 +69,9 @@ function timeOut (){
             alert("Data has passed through");
             $("#session").text(isTimedin);
         }
-
     })
 }
 }
+
+
+
