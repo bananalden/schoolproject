@@ -15,26 +15,33 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Employee ID</span>
-            <input type="text" placeholder="Enter employee ID" name="empID">
+            <input type="text" placeholder="Enter employee ID" name="empID" required>
           </div>
           <div class="input-box">
             <span class="details">Full name</span>
-            <input type="text" placeholder="Enter your Full Name" name="fname">
+            <input type="text" placeholder="Enter your Full Name" name="fname" required>
           </div>
           <div class="input-box">
-            <span class="dept">Department</span>
+            <span class="details">Department</span>
             <select name="dept" id="cars">
-                <option value="volvo">Volvo</option>
+                <option value="ITdept">IT Department</option>
+                <option value="accountDept">Accounting</option>
+                <option value="humResource">Mercedes</option>
+                <option value="markDept">Marketing Department</option>
+            </select>
+          </div>
+          <div class="input-box">
+          <span class="details">Position</span>
+            <select name="posit" id="cars">
+                <option value="deptHead">Department Head</option>
                 <option value="saab">Saab</option>
                 <option value="mercedes">Mercedes</option>
                 <option value="audi">Audi</option>
             </select>
-          </div>
-          <div class="input-box">
         </div>
         <div class="gender-details">
-          <input type="radio" name="isAdmin" id="dot-1" value="admin">
-          <input type="radio" name="isAdmin" id="dot-2" value="notadmin">
+          <input type="radio" name="status" id="dot-1" value="parttime" required>
+          <input type="radio" name="status" id="dot-2" value="fulltime" required>
           <span class="gender-title">Status</span>
           <div class="category">
             <label for="dot-1">

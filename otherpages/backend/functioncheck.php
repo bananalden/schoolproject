@@ -1,11 +1,11 @@
 <?php 
 
 //Makes a check for empty fields
-function emptyInputSignup($name,$email, $username, $password){
+function emptyInputSignup($empID, $name, $dept, $position, $empStatus){
     
     $result;
 
-    if(empty($name) || empty($email) || empty($username) || empty($password)){
+    if(empty($name) || empty($empID) || empty($dept) || empty($position) || empty($empStatus)){
         $result = true;
     }
     else{
@@ -30,8 +30,8 @@ function invalidEmail($email){
     return $result;
 }
 
-function createUser($conn, $name, $email, $username, $password, $adminpriv){
-    $sql = "INSERT INTO userlist (fullName, email, username, userPass, admincheck) VALUES (?, ?, ?, ?, ?);";
+function createUser($conn, $empID, $fullName, $dept, $position, $empStatus){
+    $sql = "INSERT INTO userlist (empID, fullName, dept, position, empStatus) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -40,9 +40,8 @@ function createUser($conn, $name, $email, $username, $password, $adminpriv){
         exit();
     }
 
-    $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $username, $pwdHashed, $adminpriv);
+    mysqli_stmt_bind_param($stmt, "sssss", $empID, $fullName, $dept, $position, $empStatus);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     //NOTE TO PERSON WRITING THIS CODE: SEND REGISTRATION BACK TO ADMIN PAGE

@@ -1,5 +1,5 @@
 <?php 
-require 'backend/adminauthentication.php';
+//require 'backend/adminauthentication.php';
 require 'backend/database.php'
 ?>
 
@@ -25,7 +25,7 @@ require 'backend/database.php'
                   <th>Email</th>
                   <th>Action</th>
             </tr>
-      <?php include 'backend/usertable.php'; ?>
+      <?php //include 'backend/usertable.php'; ?>
       </table>
 
       <!-- <nav class="nav-bar">
