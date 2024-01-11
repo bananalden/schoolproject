@@ -175,4 +175,86 @@ function updateUser($conn, $name, $email, $username, $password, $adminpriv, $use
         }
     
 
+//renames them properly
+function renameDep($dept){
+    $result;
+
+    switch($dept){
+        
+        case "ITdept":
+            $result = "IT Department";
+            return $result;
+            break;
+        
+        case "accountDept":
+            $result = "Accounting Department";
+            return $result;
+            break;
+
+        case "humResource":
+            $result = "Human Resources";
+            return $result;
+            break;
+
+        case "markDept":
+            $result = "Marketing Department";
+            return $result;
+            break;
+
+    }
+
+
+}
+
+function renamePos($pos){
+    $result;
+    switch($pos){
+        
+        case "deptHead":
+            $result = "Department Head";
+            return $result;
+            break;
+        
+        case "teamLead":
+            $result = "Team Lead";
+            return $result;
+            break;
+
+        case "srStaff":
+            $result = "Senior Staff";
+            return $result;
+            break;
+
+        case "jrStaff":
+            $result = "Junior Staff";
+            return $result;
+            break;
+
+    }
+
+
+}
+
+function renameStat($empStatus){
+    $result;
+    switch($empStatus){
+        
+        case "fulltime":
+            $result = "Full Time";
+            return $result;
+            break;
+        
+        case "parttime":
+            $result = "Part Time";
+            return $result;
+            break;
+
+
+    }
+
+
+}
+
+
+
 ?>

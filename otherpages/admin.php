@@ -19,13 +19,14 @@ require 'backend/database.php'
 </div>
       <table class="content">
       <tr class="header">
-      <th>User ID</th>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Email</th>
+                  <th>Employee ID</th>
+                  <th>Full Name</th>
+                  <th>Position</th>
+                  <th>Employee Status</th>
+                  <th>Status</th>
                   <th>Action</th>
             </tr>
-      <?php //include 'backend/usertable.php'; ?>
+      <?php include 'backend/usertable.php'; ?>
       </table>
 
       <!-- <nav class="nav-bar">

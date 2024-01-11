@@ -34,9 +34,9 @@
           <span class="details">Position</span>
             <select name="posit" id="cars">
                 <option value="deptHead">Department Head</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <option value="teamLead">Team Lead</option>
+                <option value="srStaff">Senior Staff</option>
+                <option value="jrStaff">Junior Staff</option>
             </select>
         </div>
         <div class="gender-details">

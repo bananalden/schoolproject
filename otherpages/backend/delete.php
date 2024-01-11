@@ -9,7 +9,7 @@ if (isset($_GET["getID"])){
 
     $getID = $_GET["getID"];
 
-    $sql = "DELETE FROM userlist WHERE userID = ?;";
+    $sql = "DELETE FROM userlist WHERE empID = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
 
