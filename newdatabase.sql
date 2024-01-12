@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2024 at 12:59 PM
+-- Generation Time: Jan 12, 2024 at 06:48 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,7 +40,8 @@ CREATE TABLE `userlist` (
 --
 
 INSERT INTO `userlist` (`empID`, `fullName`, `dept`, `position`, `empStatus`) VALUES
-('MA0001', 'Joe Swanson', 'ITdept', 'deptHead', 'fulltime');
+('MA0001', 'Joe Swanson', 'ITdept', 'deptHead', 'fulltime'),
+('MA0003', 'Sang Yi', 'accountDept', 'jrStaff', 'parttime');
 
 -- --------------------------------------------------------
 
@@ -55,6 +56,14 @@ CREATE TABLE `usertime` (
   `timein` datetime NOT NULL,
   `timeout` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `usertime`
+--
+
+INSERT INTO `usertime` (`empID`, `fullName`, `dept`, `timein`, `timeout`) VALUES
+('MA0001', 'Joe Swanson', 'ITdept', '2024-01-12 05:54:02', '0000-00-00 00:00:00'),
+('MA0003', 'Sang Yi', 'accountDept', '2024-01-12 05:54:17', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables

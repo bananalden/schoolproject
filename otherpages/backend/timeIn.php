@@ -14,6 +14,7 @@ $curDate = date("Y-m-d", strtotime($curdatetime));
 //strtotime($curdatetime);
 
 if (empIDexists($conn, $empID) == false){
+    //NONEXISTANT EMPID
     header("Location:/schoolproject/index.php?errorCode=2");
     exit();
 
@@ -56,12 +57,13 @@ else{
         mysqli_stmt_bind_param($stmt, "ssss", $empID, $name, $dept, $curdatetime);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        //THIS CODE IS FOR TIMEIN
+        //SUCCESFUL TIMEIN
         header("Location:/schoolproject/index.php?errorCode=0");
         exit();
         
     }
     else{
+        //CURRENTLY TIMED IN FOR THE DAY
         header("Location:/schoolproject/index.php?errorCode=1");
         exit();  
     }

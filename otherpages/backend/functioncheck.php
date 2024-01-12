@@ -368,7 +368,7 @@ function databaseDateIn($conn, $empID){
 }
 
 function databaseDateOut($conn, $empID){
-    $sql = "SELECT timein FROM usertime WHERE empID = ?";
+    $sql = "SELECT timeout FROM usertime WHERE empID = ?";
     $stmt = mysqli_stmt_init($conn);
  
 
