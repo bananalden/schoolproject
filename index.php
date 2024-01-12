@@ -13,10 +13,10 @@
     </div>
     <p>Today is <?php echo date("M, d, Y"); ?></p>
     
-    <form method="post">
-        <input name="empID" type="text" placeholder="Please enter your Employee ID" required>
-        <button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
-        <button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
+    <form class="btn" method="post">
+        <input class="form-text" name="empID" type="text" placeholder="Please enter your Employee ID" required>
+        <button class="time-in" type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
+        <button class="time-out" type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
     </form>
 
 <div class="errormessage">
