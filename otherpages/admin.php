@@ -21,8 +21,8 @@ require 'backend/database.php'
       <tr class="header">
                   <th>Employee ID</th>
                   <th>Full Name</th>
+                  <th>Department</th>
                   <th>Position</th>
-                  <th>Employee Status</th>
                   <th>Status</th>
                   <th>Action</th>
             </tr>

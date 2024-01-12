@@ -10,13 +10,11 @@
 <h1>Welcome to X employee time in!</h1>
 <p>Already have an account? </p>
 <h1 id="timenow"></h1>
-<p>Today is <?php echo date("M, d, Y") ?></p>
+<p>Today is <?php echo date("M, d, Y"); ?></p>
 <form method="post">
-<input name="empID" type="text">
-<button type="submit">Time In</input>
-<button type="submit">Time Out</input>
-
-
+<input name="empID" type="text" placeholder="Please enter your Employee ID" required>
+<button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
+<button type="submit">Time Out</buton>
 </form>
 <script src="otherpages/javascript/admin.js"></script>
 </body>
