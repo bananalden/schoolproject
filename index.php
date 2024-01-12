@@ -36,6 +36,10 @@
                 echo "<p>Employee ID does not exist!</p>";
             break;
 
+            case 3:
+                echo "<p>You have already timed out for the day!</p>";
+            break;
+
 
         }
     }

@@ -2,7 +2,7 @@
 require_once 'database.php';
 date_default_timezone_set('Asia/Singapore');
 //$_POST["empID"];
-$empID = "MA0001";
+$empID = $_POST["empID"];
 $checkTimein = checkTimein($conn, $empID);
 $name = grabName($conn, $empID);
 $dept = grabDept($conn, $empID);
@@ -22,38 +22,27 @@ if (empIDexists($conn, $empID) == false){
 
 
 else {
-    if ($emptyTimein == true){
-        if($nullTimeExit == true){
-            $sql = "UPDATE usertime SET timeExit = CURRENT_TIMESTAMP WHERE empID = '$empID' AND DATE(timein) = CURRENT_DATE;";
-            $result = mysqli_query($conn, $sql);
-        
-            if($result){
-                header("Location:/schoolproject/index.php?errorCode=0");
-                exit();
-            }
-            else{
-                die(mysqli_error($conn));
-            }
-        }
+   if($emptyTimein == true){
+    header('location:/schoolproject/index.php?errorCode=1');
+   }
 
-        else{
-            header("Location:/schoolproject/index.php?errorCode=1");
-            exit();
-        }
-        
-        
-        
-    }
+   else{
 
-    else {
+   }
 
-        header("Location:/schoolproject/index.php?errorCode=3");
+   if($nullTimeExit == true){
+    $sql = "UPDATE usertime SET timeExit = CURRENT_TIMESTAMP WHERE empID = '$empID' AND DATE(timein) = CURRENT_DATE;";
+    $result = mysqli_query($conn, $sql);
+
+    if($result){
+        header("Location:/schoolproject/index.php?errorCode=0");
         exit();
     }
-    
-
+    else{
+        die(mysqli_error($conn));
+    }
 }
-
+}
 
 
 ?>
