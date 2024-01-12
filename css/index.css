@@ -16,6 +16,7 @@ h1 {
     font-size: 35px;
     letter-spacing: 3px;
     font-family: 'Poppins',sans-serif;
+    color: #303841;
 }
 
 p {
@@ -23,6 +24,8 @@ p {
     margin-top: 35px;
     font-size: 17px;
     letter-spacing: 3px;
+    font-weight: bold;
+    color: #303841;
 }
 
 a {
@@ -31,4 +34,25 @@ a {
     margin-top: 20px;
     letter-spacing: 2px;
     color: black;
+}
+
+.clock-time {
+    background: whitesmoke;
+    box-shadow:
+    inset 0 -3em 3em rgba(66, 68, 66, 0.3),
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgba(42, 42, 42, 0.6);
+    border-radius: 30px;
+    height: 25%;
+    width: 30%;
+    position: relative;
+    left: 35%;
+}
+
+#timenow {
+    font-family:'digital-clock-font';
+    position: relative;
+    top: 90px;
+    left: 10px;
+    color: #303841;
 }

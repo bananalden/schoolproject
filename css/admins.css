@@ -119,8 +119,8 @@ td, th {
 }
 
 .delete:hover{
-      background-color: #ff9d9d;
+      background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
       color: white;
       transition: 0.3s;
-      cursor: pointer;  
+      cursor: pointer;
 }
