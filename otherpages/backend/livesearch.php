@@ -12,11 +12,14 @@ if(isset($_GET["search"])){
               $dept = $rows["dept"];
               $deptChange = renameDep($dept); 
             
-            echo '<td>'.$rows["empID"].'</td>
+            echo '
+            <tr>
+            <td>'.$rows["empID"].'</td>
                 <td>'.$rows["fullName"].'</td>
                 <td>'.$deptChange.'</td>
                 <td>'.$rows["timein"].'</td>
-                <td>'.$rows["timeExit"].'</td>';
+                <td>'.$rows["timeExit"].'</td>
+            </tr>';
 
         }
     }
