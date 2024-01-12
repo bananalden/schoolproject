@@ -1,7 +1,7 @@
 <?php 
 require_once 'functioncheck.php';
 require_once 'database.php';
-
+date_default_timezone_set('Asia/Singapore');
 $empID = $_POST["empID"];
 $checkTimein = checkTimein($conn, $empID);
 $name = grabName($conn, $empID);
@@ -21,7 +21,7 @@ if (empIDexists($conn, $empID) == false){
 }
 
 else{
-    if (empty($usertimeinDate) || empty($checkTimein)){
+    if (empty($usertimeinDate)){
 
         $sql = "INSERT INTO usertime (empID, fullName, dept, timein) VALUES (?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);

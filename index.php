@@ -15,7 +15,7 @@
 <form method="post">
 <input name="empID" type="text" placeholder="Please enter your Employee ID" required>
 <button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
-<button type="submit">Time Out</buton>
+<button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
 </form>
 </div>
 
@@ -38,10 +38,7 @@
 
 
         }
-
-
     }
-    
     
     ?>
 </div>

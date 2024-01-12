@@ -311,7 +311,7 @@ function grabDept($conn, $empID){
 
 //checks if the table is empty first before inputting
 function checkTimein($conn, $empID){
-    $sql = "SELECT empID, timein FROM usertime WHERE empID = ?";
+    $sql = "SELECT empID, timein FROM usertime WHERE empID = ?;";
     $stmt = mysqli_stmt_init($conn);
     
     $result;
@@ -368,7 +368,7 @@ function databaseDateIn($conn, $empID){
 }
 
 function databaseDateOut($conn, $empID){
-    $sql = "SELECT timeout FROM usertime WHERE empID = ?";
+    $sql = "SELECT timeExit FROM usertime WHERE empID = ?";
     $stmt = mysqli_stmt_init($conn);
  
 
@@ -382,7 +382,7 @@ function databaseDateOut($conn, $empID){
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
     $getTimein = mysqli_fetch_assoc($resultData);
-    $timeInresult = $getTimein["timein"];
+    $timeInresult = $getTimein["timeExit"];
     $datetimeToDate = date("Y-m-d", strtotime($timeInresult));
     mysqli_stmt_close($stmt);
    
@@ -415,6 +415,70 @@ function empIDexists($conn, $empID){
         return $result;
     }
     mysqli_stmt_close($stmt);
+
+}
+
+function databaseDateTimeInNull($conn, $empID){
+    $sql = "SELECT DATE(timein) FROM usertime WHERE empID = ? AND DATE(timein) = CURRENT_DATE;";
+    $stmt = mysqli_stmt_init($conn);
+    $result;
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $empID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    $getTimein = mysqli_fetch_assoc($resultData);
+    $timeInresult = $getTimein["timein"];
+    mysqli_stmt_close($stmt);
+
+    if(empty($timeInresult)){
+        $result = true;
+        return $result;
+
+    }
+
+    else {
+        $result = false;
+        return $result;
+    }
+}
+
+
+
+function databaseDateTimeOutNull($conn, $empID){
+    $sql = "SELECT timeExit FROM usertime WHERE empID = ? AND DATE(timein) = CURRENT_DATE;";
+    $stmt = mysqli_stmt_init($conn);
+    $result;
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $empID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    $getTimein = mysqli_fetch_assoc($resultData);
+    $timeInresult = $getTimein["timeExit"];
+    mysqli_stmt_close($stmt);
+
+    if(empty($timeInresult)){
+        $result = true;
+        return $result;
+
+    }
+
+    else {
+        $result = false;
+        return $result;
+    }
+    
 
 }
 
