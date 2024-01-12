@@ -256,5 +256,56 @@ function renameStat($empStatus){
 }
 
 
+function grabName($conn, $empID){
+    $sql = "SELECT fullName FROM userlist WHERE empID = ?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
+        exit();
+    }
+
+   
+   
+
+
+    mysqli_stmt_bind_param($stmt, "s", $empID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    $getName = mysqli_fetch_assoc($resultData);
+    $fullName = $getName["fullName"];
+    mysqli_stmt_close($stmt);
+   
+    
+    return $fullName;
+ 
+}
+
+function grabDept($conn, $empID){
+    $sql = "SELECT dept FROM userlist WHERE empID = ?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
+        exit();
+    }
+
+   
+   
+
+
+    mysqli_stmt_bind_param($stmt, "s", $empID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    $getDept = mysqli_fetch_assoc($resultData);
+    $dept = $getDept["dept"];
+    mysqli_stmt_close($stmt);
+   
+    
+    return $dept;
+ 
+}
 
 ?>

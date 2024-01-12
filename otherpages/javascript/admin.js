@@ -1,25 +1,15 @@
-$(document).ready(function(){
+function updateClock(){
 
-    $("#delete-button").on("click",userDelete);
+    const now = new Date();
+    let hours = now.getHours();
+    const meridiem = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+    hours = hours.toString().padStart(2, 0);
+    const minutes = now.getMinutes().toString().padStart(2, 0);
+    const seconds = now.getSeconds().toString().padStart(2, 0);
+    const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+    document.getElementById("timenow").textContent = timeString;
+}
 
-    function userDelete (){
-        var confirmation = confirm("Are you sure you want to delete this user?");
-        var userID = $(this).val();
-        if (confirmation != true){
-         alert("Data not entered")
-        }
-    
-        else {
-       $.ajax({
-        url : "delete.php",
-        type : "POST",
-        data : { userID : userID },
-        success: function(response){
-            alert("User has been deleted!");
-        }
-    
-    
-       });
-    }
-    }
-});
+updateClock();
+setInterval(updateClock, 1000);
