@@ -56,43 +56,64 @@ a {
     left: 10px;
     color: #303841;
 }
-
-.btn input {
+.form-text {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    border: none;
+    background-color: whitesmoke;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 15px;
     position: relative;
-    left: 45%;
+    left: 44.5%;
+    width: 200px;
+    height: 40px;
+    outline: none;
+    color: #303841;
 }
 
-.form-text {
-    height: 45px;
-    width: 13%;
-    outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    padding-left: 15px;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
-    position: relative;
-    top: 30%;
-    left: 20px;
-  }
-  .form-text:focus,
-  .form-text:valid{
-    border-color: #9b59b6;
+::placeholder {
+    color: #303841;
+    opacity: 1;
   }
 
-/* height: 100%;
-   width: 100%;
-   margin-top: 10px;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+/********* BUTTONS ********/
+
+button {
+    --c: #393e46; /* the color*/
+    
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+
+button {
+    margin-top: 40px;
+    font-family: system-ui, sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: .1em .6em;
+    font-weight: bold;  
+    border: none;
+    position: relative;
+    left: 43.5%;
+    color: #ececec;
+  }
