@@ -12,12 +12,14 @@
         <h1 id="timenow"></h1>
     </div>
     <p>Today is <?php echo date("M, d, Y"); ?></p>
-    
+    <div>
     <form method="post">
-        <input name="empID" type="text" placeholder="Please enter your Employee ID" required>
+        <input name="empID" type="text" placeholder="Please enter your Employee ID" required></input>
         <button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
         <button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
     </form>
+    </div>
+   
 
 <div class="errormessage">
     <?php 
@@ -42,10 +44,17 @@
 
     }
     
-    
     ?>
 </div>
 
+<div class="table-search">
+    <label>Search current time table</label>
+    <input id="grabEmpID" type="text">
+    <button id= "displayTable" type="button">Search</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="otherpages/javascript/table_disaplayjquery.js"></script>
 <script src="otherpages/javascript/admin.js"></script>
 </body>
 </html>
