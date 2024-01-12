@@ -343,8 +343,44 @@ function checkTimein($conn, $empID){
 
 }
     
+
+function matchingDateIn($conn, $empID){
+    $sql = "SELECT empID, DATE(timein) AS timein FROM usertime WHERE empID = ? AND DATE(timein) = CURRENT_DATE;";
+    $stmt = mysqli_stmt_init($conn);
+    
+    $result;
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $empID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    $getTimein = mysqli_fetch_assoc($resultData);
+    $timeInresult = $getTimein["timein"];
+    
+    mysqli_stmt_close($stmt);
+   
+
+    if (empty($timeInresult)){
+        $result = true;
+        return $result;
+    }
+
+    else{
+        $result = false;
+        return $result;
+
+    }
+
+}
+
+
 function databaseDateIn($conn, $empID){
-    $sql = "SELECT timein FROM usertime WHERE empID = ?";
+    $sql = "SELECT DATE(timein) AS timein FROM usertime WHERE empID = ? AND DATE(timein) = CURRENT_DATE;";
     $stmt = mysqli_stmt_init($conn);
  
 
@@ -359,16 +395,16 @@ function databaseDateIn($conn, $empID){
     $resultData = mysqli_stmt_get_result($stmt);
     $getTimein = mysqli_fetch_assoc($resultData);
     $timeInresult = $getTimein["timein"];
-    $datetimeToDate = date("Y-m-d", strtotime($timeInresult));
+    
     mysqli_stmt_close($stmt);
    
 
-    return $datetimeToDate;
+    return $timeInresult;
 
 }
 
 function databaseDateOut($conn, $empID){
-    $sql = "SELECT timeExit FROM usertime WHERE empID = ?";
+    $sql = "SELECT DATE(timeExit) AS timeExit FROM usertime WHERE empID = ? AND DATE(timeExit) = CURRENT_DATE;";
     $stmt = mysqli_stmt_init($conn);
  
 

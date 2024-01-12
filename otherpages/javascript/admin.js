@@ -9,7 +9,9 @@ function updateClock(){
     const seconds = now.getSeconds().toString().padStart(2, 0);
     const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
     document.getElementById("timenow").textContent = timeString;
-}
+};
 
 updateClock();
 setInterval(updateClock, 1000);
+
+
