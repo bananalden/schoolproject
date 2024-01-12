@@ -7,19 +7,6 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<<<<<<< Updated upstream
-<h1>Welcome to X employee time in!</h1>
-<p>Already have an account? </p>
-<h1 id="timenow"></h1>
-<p>Today is <?php echo date("M, d, Y"); ?></p>
-<div>
-<form method="post">
-<input name="empID" type="text" placeholder="Please enter your Employee ID" required>
-<button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
-<button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
-</form>
-</div>
-=======
     <h1>Welcome to X employee time in!</h1>
     <div class="clock-time">
         <h1 id="timenow"></h1>
@@ -29,13 +16,8 @@
     <form method="post">
         <input name="empID" type="text" placeholder="Please enter your Employee ID" required>
         <button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
-        <button type="submit">Time Out</buton>
+        <button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
     </form>
-
-    <section id="section-2">
-
-    </section>
->>>>>>> Stashed changes
 
 <div class="errormessage">
     <?php 
@@ -54,16 +36,16 @@
                 echo "<p>Employee ID does not exist!</p>";
             break;
 
-            case 3:
-                echo "<p>You have already timed out for the day!</p>";
-            break;
-
 
         }
+
+
     }
+    
     
     ?>
 </div>
+
 <script src="otherpages/javascript/admin.js"></script>
 </body>
 </html>
