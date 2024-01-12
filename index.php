@@ -1,3 +1,4 @@
+<?php include 'otherpages/backend/database.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 <body>
     <h1>Welcome to X employee time in!</h1>
@@ -47,14 +49,33 @@
     ?>
 </div>
 
-<div class="table-search">
-    <label>Search current time table</label>
-    <input id="grabEmpID" type="text">
-    <button id= "displayTable" type="button">Search</button>
+<form action="" method="GET">
+ <label>Search current time table</label><br>
+<input type="text" name="search" value= "<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder = "Enter Employee ID">
+<button type="submit">Search</button>
+</form>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Full Name</th>
+                <th>Department</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php include 'otherpages/backend/livesearch.php'; ?>
+        </tbody>
+    </table>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="otherpages/javascript/table_disaplayjquery.js"></script>
-<script src="otherpages/javascript/admin.js"></script>
+
+<div id="displayResult">
+    
+</div>
+<script type= "text/javascript" src="otherpages/javascript/admin.js"></script>
 </body>
 </html>
