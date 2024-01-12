@@ -13,17 +13,7 @@
     <div class="clock-time">
         <h1 id="timenow"></h1>
     </div>
-    <p>Today is <?php echo date("M, d, Y"); ?></p>
-    <div>
-    <form method="post">
-        <input name="empID" type="text" placeholder="Please enter your Employee ID" required></input>
-        <button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
-        <button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
-    </form>
-    </div>
-   
-
-<div class="errormessage">
+    <div class="errormessage">
     <?php 
     if (isset($_GET["errorCode"])){
         switch($_GET["errorCode"]){
@@ -48,12 +38,22 @@
     
     ?>
 </div>
-
+    <p>Today is <?php echo date("M, d, Y"); ?></p>
+    <div>
+    <form method="post">
+        <input name="empID" type="text" placeholder="Enter ID to Time In/Out" required></input>
+        <button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
+        <button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
+    </form>
+    </div>
 <form action="" method="GET">
- <label>Search current time table</label><br>
-<input type="text" name="search" value= "<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder = "Enter Employee ID">
+<input type="text" name="search" value= "<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder = "Search Time">
 <button type="submit">Search</button>
 </form>
+
+
+
+
 
 <div>
     <table>
