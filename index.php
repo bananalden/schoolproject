@@ -46,7 +46,7 @@
         <button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
     </form>
     </div>
-<form action="" method="GET">
+<!--<form action="" method="GET">
 <input type="text" name="search" value= "<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder = "Search Time">
 <button type="submit">Search</button>
 </form>
@@ -76,6 +76,8 @@
 <div id="displayResult">
     
 </div>
+<
+!-->
 <script type= "text/javascript" src="otherpages/javascript/admin.js"></script>
 </body>
 </html>

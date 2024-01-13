@@ -515,6 +515,38 @@ function databaseDateTimeOutNull($conn, $empID){
         return $result;
     }
     
+    
+
+}
+
+function matchEmpID($conn, $empID){
+    $sql = "SELECT * FROM userlist WHERE empID = ?";
+    $stmt = mysqli_stmt_init($conn);
+    $matching;
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $empID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    $result = mysqli_fetch_assoc($resultData);
+
+    if($result == $empID){
+        $matching = true;
+        return $matching;
+    }
+
+    else{
+        $matching = false;
+        return $matching;
+    }
+ 
+    mysqli_stmt_close($stmt);
 
 }
 

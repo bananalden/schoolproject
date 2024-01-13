@@ -10,19 +10,19 @@ if(isset($_POST["submit"])){
    require_once 'database.php';
    require_once 'functioncheck.php';
 
-   //Makes check for empty fields
-   //if(emptyInputSignup($empID, $name, $dept, $position, $empStatus) !== false){
-    //    header("Location: ../registration.php?error=emptyinput");
-      //  exit();
-  // }
+   if (matchEmpID($conn, $empID) == false){
+    createuser($conn, $empID, $name, $department, $position, $empStatus);
+    header("Location.../registration.php?errorCode=0");
+    exit();
+}
 
    //Function that puts in user info into database
-   createuser($conn, $empID, $name, $department, $position, $empStatus);
+   
 
 }
 
 else {
-    header("Location: ../registration.php");
+    header("Location: ../registration.php?errorCode=1");
 }
 
 ?>
