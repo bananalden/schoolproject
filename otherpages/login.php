@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="title">
-        <h1> Employee Login Form </h1>   
+        <h1> Administrator Login </h1>   
     </div>
     <form  action="backend/logcheck.php" method="post">  
     <div class="container">   
@@ -28,7 +28,8 @@
                 <input type="password" placeholder="Enter Password" name="pword" required>
             </div>  
 
-            <button type="submit" name="submit">Login</button>   
+            <button type="submit" name="submit">Login</button>
+            <a href="../index.php">Click here for the Time-In form for Employees!</a>
         </div>   
     </form>  
 </body>
