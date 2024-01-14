@@ -535,18 +535,11 @@ function matchEmpID($conn, $empID){
     $resultData = mysqli_stmt_get_result($stmt);
 
     $result = mysqli_fetch_assoc($resultData);
-
-    if($result == $empID){
-        $matching = true;
-        return $matching;
-    }
-
-    else{
-        $matching = false;
-        return $matching;
-    }
+    $matchingEmpID = $result["empID"];
  
+   
     mysqli_stmt_close($stmt);
+    return $matchingEmpID;
 
 }
 

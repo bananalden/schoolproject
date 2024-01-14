@@ -63,6 +63,24 @@
       </form>
     </div>
   </div>
+  <div class="errormessage">
+  <?php 
+    if (isset($_GET["errorCode"])){
+        switch($_GET["errorCode"]){
+
+            case 0:
+                echo "<p>ID Created Succesfully!</p>";
+            break;
+                
+            case 1:
+                echo "<p>ID already exists!</p>";
+            break;
+
+        }
+    }
+    
+    ?>
+  </div>
     <!-- <h1>User creation:</h1>
     <form action="backend/regcheck.php" method="post">
         
