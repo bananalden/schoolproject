@@ -367,6 +367,7 @@ td, th {
 
 .button-container input {
       text-align: center;
+      border-radius: 10px;
       position: relative;
       top: 50px;
       width: 135%;
