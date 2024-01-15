@@ -32,7 +32,7 @@
           </div>
           <div class="input-box">
           <span class="details">Position</span>
-            <select name="posit" id="cars">
+            <select name="posit" id="position">
                 <option value="deptHead">Department Head</option>
                 <option value="teamLead">Team Lead</option>
                 <option value="srStaff">Senior Staff</option>
