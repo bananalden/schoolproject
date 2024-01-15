@@ -15,13 +15,13 @@ body{
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: #385170;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 /******* NAVBAR *******/
 
 nav{
-  background: #171c24;
+  background: #38598b;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -259,7 +259,7 @@ td, th {
 .create-button, .logout-button{
       height: 100%;
       width: 120px;
-      background-color: #fff;
+      background-color: #ececec;
       border: 0 solid #e2e8f0;
       font-family: 'Poppins',sans-serif;
       box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
@@ -276,7 +276,7 @@ td, th {
 
 .logout-button{
     
-      background-color: #fff;
+      background-color: #ececec;
       
 }
 
