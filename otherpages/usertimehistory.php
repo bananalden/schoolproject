@@ -32,7 +32,7 @@ require 'backend/database.php'
       <div class="button-container">
         <form action="" method="GET">
             <input type="text" name="search" value="<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder="Input user Employee ID">
-            <button type="submit" class="create-button">Search</button>
+            <button type="submit" class="create-btn">Search</button>
         </form>
             
       </div>
