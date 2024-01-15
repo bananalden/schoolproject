@@ -397,17 +397,22 @@ td, th {
     }
 
 .button-container input {
-      background-color: #ececec;
+      background-color: #f95959;
       text-align: center;
       border-radius: 10px;
-      box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+      box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #f95959;
       position: relative;
       top: 50px;
       width: 100%;
       height: 50px;
       outline: none;
       border: none;
-      
+}
+
+::placeholder {
+      color: #303841;
+      opacity: 1;
+      font-weight: 600;
 }
 
 
@@ -439,24 +444,3 @@ td, th {
       box-shadow: inset 0px 3px 7px #d6d6e7;
       transform: translateY(2px);
 }
-/* .create-btn {
-      position: relative;
-      left: 310px;
-      width: 50%;
-      height: 50px;
-      border-radius: 10px;
-      background-color: #fff;
-      border: 0 solid #e2e8f0;
-      font-size: 18px;
-      color: #0d172a;
-      cursor: pointer;
-      font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-      text-decoration-thickness: auto;
-      transition: all .1s cubic-bezier(.4, 0, .2, 1);
-      box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);    
-}
-
-.create-btn:hover {
-      background-color: #303841;
-      color: #fff;
-} */
