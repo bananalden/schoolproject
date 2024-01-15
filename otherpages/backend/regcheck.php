@@ -9,18 +9,27 @@ if(isset($_POST["submit"])){
    $empStatus = $_POST["status"];
    $existingID = matchEmpID($conn, $empID);
 
+   try {
+    createUser($conn, $empID, $name, $department, $position, $empStatus);
+    header("Location:../registration.php?errorCode=0");
+    exit();
 
-    if($empID == $existingID){
+} catch (mysqli_sql_exception $e) {
+    if ($e->getCode() == 1062) { // 1062 is the MySQL error code for duplicate entry
         header("Location:../registration.php?errorCode=1");
         exit();
+    } else {
+        // Handle other database-related errors
+        echo "Database error: " . $e->getMessage();
     }
+}
 
-    else{
-        createUser($conn, $empID, $name, $department, $position, $empStatus);
-        header("Location:../registration.php?errorCode=0");
-        exit();
         
-    }
+ 
+    
+       
+        
+    
 
 }
 ?>

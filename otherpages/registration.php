@@ -40,8 +40,8 @@
             </select>
         </div>
         <div class="gender-details">
-          <input type="radio" name="status" id="dot-1" value="parttime" required>
-          <input type="radio" name="status" id="dot-2" value="fulltime" required>
+          <input type="radio" name="status" id="dot-1" value="parttime">
+          <input type="radio" name="status" id="dot-2" value="fulltime" checked="checked">
           <span class="gender-title">Status</span>
           <div class="category">
             <label for="dot-1">

@@ -513,6 +513,7 @@ function databaseDateTimeOutNull($conn, $empID){
 function matchEmpID($conn, $empID){
     $sql = "SELECT * FROM userlist WHERE empID = ?";
     $stmt = mysqli_stmt_init($conn);
+    
     $matching;
 
     if(!mysqli_stmt_prepare($stmt, $sql)){

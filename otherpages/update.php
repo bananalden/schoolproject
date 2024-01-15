@@ -14,10 +14,6 @@
       <form action="backend/updatecheck.php?updateID=<?php echo $_GET["updateID"]; ?>" method="post">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Employee ID</span>
-            <input type="text" placeholder="Enter employee ID" name="empID" required>
-          </div>
-          <div class="input-box">
             <span class="details">Full name</span>
             <input type="text" placeholder="Enter your Full Name" name="fname" required>
           </div>
@@ -26,7 +22,7 @@
             <select name="dept" id="cars">
                 <option value="ITdept">IT Department</option>
                 <option value="accountDept">Accounting</option>
-                <option value="humResource">Mercedes</option>
+                <option value="humResource">Human Resources</option>
                 <option value="markDept">Marketing Department</option>
             </select>
           </div>
@@ -40,8 +36,8 @@
             </select>
         </div>
         <div class="gender-details">
-          <input type="radio" name="status" id="dot-1" value="parttime" required>
-          <input type="radio" name="status" id="dot-2" value="fulltime" required>
+          <input type="radio" name="status" id="dot-1" value="parttime" >
+          <input type="radio" name="status" id="dot-2" value="fulltime" checked="checked">
           <span class="gender-title">Status</span>
           <div class="category">
             <label for="dot-1">

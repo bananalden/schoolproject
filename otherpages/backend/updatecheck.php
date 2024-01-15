@@ -14,8 +14,9 @@ if(isset($_POST["submit"])){
     $empStatus = $_POST["status"];
     
         
-    
-        $sql = "UPDATE userlist SET empID = '$empID', fullName = '$name', dept= '$department', position = '$position', empStatus = '$empStatus' WHERE empID = '$getID';";
+   
+
+        $sql = "UPDATE userlist SET fullName = '$name', dept= '$department', position = '$position', empStatus = '$empStatus' WHERE empID = '$getID';";
     
         $result = mysqli_query($conn, $sql);
     
