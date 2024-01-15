@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2024 at 06:48 AM
+-- Generation Time: Jan 15, 2024 at 09:35 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,6 +41,7 @@ CREATE TABLE `userlist` (
 
 INSERT INTO `userlist` (`empID`, `fullName`, `dept`, `position`, `empStatus`) VALUES
 ('MA0001', 'Joe Swanson', 'ITdept', 'deptHead', 'fulltime'),
+('MA0002', 'Joe Ronald', 'markDept', 'deptHead', 'parttime'),
 ('MA0003', 'Sang Yi', 'accountDept', 'jrStaff', 'parttime');
 
 -- --------------------------------------------------------
@@ -54,16 +55,19 @@ CREATE TABLE `usertime` (
   `fullName` varchar(255) NOT NULL,
   `dept` varchar(255) NOT NULL,
   `timein` datetime NOT NULL,
-  `timeout` datetime NOT NULL
+  `timeExit` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `usertime`
 --
 
-INSERT INTO `usertime` (`empID`, `fullName`, `dept`, `timein`, `timeout`) VALUES
-('MA0001', 'Joe Swanson', 'ITdept', '2024-01-12 05:54:02', '0000-00-00 00:00:00'),
-('MA0003', 'Sang Yi', 'accountDept', '2024-01-12 05:54:17', '0000-00-00 00:00:00');
+INSERT INTO `usertime` (`empID`, `fullName`, `dept`, `timein`, `timeExit`) VALUES
+('MA0001', 'Joe Swanson', 'ITdept', '2024-01-12 18:50:11', '2024-01-12 18:50:20'),
+('MA0001', 'Joe Swanson', 'ITdept', '2024-01-13 00:39:51', '2024-01-13 00:40:07'),
+('MA0002', 'Joe Ronald', 'markDept', '2024-01-13 00:45:16', '2024-01-13 00:45:20'),
+('MA0001', 'Joe Swanson', 'ITdept', '2024-01-15 12:42:26', '2024-01-15 13:13:56'),
+('MA0003', 'Sang Yi', 'accountDept', '2024-01-15 13:12:06', '2024-01-15 13:15:55');
 
 --
 -- Indexes for dumped tables
