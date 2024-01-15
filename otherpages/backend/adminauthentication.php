@@ -1,20 +1,9 @@
 <?php 
     session_start();
-    $userID = $_SESSION["userId"];
-    $adminuser = $_SESSION["admincheck"];
-    $fullname = $_SESSION["fullName"];
-    $loggedin = $_SESSION["isloggedin"];
-
-    
-
-      if (empty($loggedin)){
+      if (empty($_SESSION["username"])){
             session_destroy();
-            header("location:../index.php");
+            header("location:../otherpages/login.php");
       }
 
-      if($adminuser != "admin"){
-            session_destroy();
-            header("location:login.php");
-      }
 
 ?>

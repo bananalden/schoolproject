@@ -472,16 +472,7 @@ function databaseDateTimeInNull($conn, $empID){
     $timeInresult = $getTimein["timein"];
     mysqli_stmt_close($stmt);
 
-    if(empty($timeInresult)){
-        $result = true;
-        return $result;
-
-    }
-
-    else {
-        $result = false;
-        return $result;
-    }
+    return $timeInresult;
 }
 
 

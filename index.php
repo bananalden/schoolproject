@@ -19,15 +19,27 @@
         switch($_GET["errorCode"]){
 
             case 0:
-                echo "<p>Time in/out was succesful!</p>";
+                echo "<p>Time in was successful!</p>";
             break;
                 
             case 1:
-                echo "<p>You have already timed in/out on this date!</p>";
+                echo "<p>You have already timed in for the day!</p>";
             break;
 
             case 2:
                 echo "<p>Employee ID does not exist!</p>";
+            break;
+
+            case 3:
+                echo "<p>You are not Timed In!</p>";
+            break;
+
+            case 4:
+                echo "<p>Time Out was Successful</p>";
+            break;
+
+            case 5:
+                echo "<p>You are already Timed out!</p>";
             break;
 
 

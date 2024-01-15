@@ -125,7 +125,7 @@
 
     <?php 
     
-    //require 'backend/adminauthentication.php';
+   require 'backend/adminauthentication.php';
 
     
     ?>

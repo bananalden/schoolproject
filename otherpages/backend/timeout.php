@@ -22,22 +22,22 @@ if (empIDexists($conn, $empID) == false){
 
 
 else {
-   if($emptyTimein == true){
-    header('location:/schoolproject/index.php?errorCode=1');
+   if(empty($emptyTimein)){
+    header('location:/schoolproject/index.php?errorCode=3');
    }
 
    else{
-
+    header('location:/schoolproject/index.php?errorCode=5');
    }
 
    if($nullTimeExit == true){
 
-    if ($curDate > $usertimeoutDate){
+if ($curDate > $usertimeoutDate){
         $sql = "UPDATE usertime SET timeExit = CURRENT_TIMESTAMP WHERE empID = '$empID' AND DATE(timein) = CURRENT_DATE;";
         $result = mysqli_query($conn, $sql);
     
         if($result){
-            header("Location:/schoolproject/index.php?errorCode=0");
+            header("Location:/schoolproject/index.php?errorCode=4");
             exit();
         }
         else{
@@ -45,12 +45,12 @@ else {
         }
     }
     
-    else {
-        header("Location:/schoolproject/index.php?errorCode=1");
+else {
+        header("Location:/schoolproject/index.php?errorCode=5");
         exit();
     }
-}
+
 }
 
-
+}
 ?>

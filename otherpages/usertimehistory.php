@@ -6,7 +6,7 @@ require 'backend/database.php'
 <html>
 <head>
 <link type="text/css" rel="stylesheet" href="../css/admins.css">
-      <title>Admin</title>
+      <title>User time History</title>
       
 </head>
 <body>
@@ -16,11 +16,11 @@ require 'backend/database.php'
                   <span class="fas fa-bars"></span>
             </div>
 
-            <div class="logo">Admin user</div>
+            <div class="logo">User Time History</div>
 
             <div class="nav-items">
-                  <li><a>Home</a></li>
-                  <li><a href="usertimehistory.php">User Time History</a></li>
+                  <li><a href="admin.php">Home</a></li>
+                  <li><a>User Time History</a></li>
             </div>
 
             <div class="search-icon">
@@ -29,20 +29,24 @@ require 'backend/database.php'
 
       </nav> 
       
-      <div class="button-container"> 
-            <a class="create-button" href="registration.php">Create User</a>
-            <a class="logout-button" href="logout.php">LOG OUT</a>
+      <div class="button-container">
+        <form action="" method="GET">
+            <input type="text" name="search" value="<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder="Input user Employee ID">
+            <button type="submit" class="create-button">Search</button>
+        </form>
+            
       </div>
       <table class="content">
             <tr class="header">
                   <th>Employee ID</th>
                   <th>Full Name</th>
                   <th>Department</th>
-                  <th>Position</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th>Date In</th>
+                  <th>Time In</th>
+                  <th>Date Out</th>
+                  <th>Time Out</th>
             </tr>
-            <?php include 'backend/usertable.php'; ?>
+            <?php include 'backend/livesearch.php'; ?>
       </table>
 
   
