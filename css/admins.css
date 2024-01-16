@@ -410,6 +410,7 @@ td, th {
 }
 
 ::placeholder {
+      background-color: #f95959;
       color: #303841;
       opacity: 1;
       font-weight: 600;
