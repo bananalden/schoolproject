@@ -10,6 +10,7 @@ $curdatetime = date("Y-m-d H:i:s");
 $usertimeinDate = databaseDateIn($conn, $empID);
 $curDatetimeCheck = matchingDateIn($conn, $empID);
 $curDate = date("Y-m-d");
+$empIDCAPS = strtoupper($empID);
 //strtotime($curdatetime);
 
 if (empIDexists($conn, $empID) == false){
@@ -31,7 +32,7 @@ else{
         }
         
         
-        mysqli_stmt_bind_param($stmt, "ssss", $empID, $name, $dept, $curdatetime);
+        mysqli_stmt_bind_param($stmt, "ssss", $empIDCAPS, $name, $dept, $curdatetime);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         //THIS CODE IS FOR TIMEIN
@@ -51,7 +52,7 @@ else{
             }
             
             
-            mysqli_stmt_bind_param($stmt, "ssss", $empID, $name, $dept, $curdatetime);
+            mysqli_stmt_bind_param($stmt, "ssss", $empIDCAPS, $name, $dept, $curdatetime);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
             //SUCCESFUL TIMEIN

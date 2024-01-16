@@ -11,6 +11,7 @@ $usertimeoutDate = databaseDateOut($conn, $empID);
 $curDate = date("Y-m-d");
 $emptyTimein = databaseDateTimeInNull($conn, $empID);
 $nullTimeExit = databaseDateTimeOutNull($conn, $empID);
+$empIDCAPS = strtoupper($empID);
 //strtotime($curdatetime);
 
 if (empIDexists($conn, $empID) == false){
@@ -33,7 +34,7 @@ else {
    if($nullTimeExit == true){
 
 if ($curDate > $usertimeoutDate){
-        $sql = "UPDATE usertime SET timeExit = CURRENT_TIMESTAMP WHERE empID = '$empID' AND DATE(timein) = CURRENT_DATE;";
+        $sql = "UPDATE usertime SET timeExit = CURRENT_TIMESTAMP WHERE empID = '$empIDCAPS' AND DATE(timein) = CURRENT_DATE;";
         $result = mysqli_query($conn, $sql);
     
         if($result){

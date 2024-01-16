@@ -7,10 +7,10 @@ if(isset($_POST["submit"])){
    $department = $_POST["dept"];
    $position = $_POST["posit"];
    $empStatus = $_POST["status"];
-   $existingID = matchEmpID($conn, $empID);
+   $empIDCAPS = strtoupper($empID);
 
    try {
-    createUser($conn, $empID, $name, $department, $position, $empStatus);
+    createUser($conn, $empIDCAPS, $name, $department, $position, $empStatus);
     header("Location:../registration.php?errorCode=0");
     exit();
 
