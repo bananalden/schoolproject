@@ -17,21 +17,10 @@
     <div class="title">
         <h1> Administrator Login </h1>   
     </div>
-    <div class="error">
-        <?php 
-    if (isset($_GET["error"])){
-        if($_GET["error"] == "")
-        {
-            echo "<p></p>";
-        }
-
-        else if($_GET["error"] == "wrongcredentials"){
-            echo '<p color="red">Wrong credentials</p>';
-        }
-    }
-    ?>
+    <!-- <div class="error">
+        
     
-        </div>  
+        </div>   -->
     <form  action="backend/logcheck.php" method="post">  
         <div class="container">   
             <div class="user-details">
@@ -51,7 +40,7 @@
     </form>
     <div class="alert">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>Wrong</strong>Credentials
+        <strong>Wrong</strong> Credentials
     </div>
 </body>
 </html>

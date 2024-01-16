@@ -107,9 +107,12 @@ a {
 } */
 
 .alert {
-    padding: 20px;
     background-color: #f44336;
+    border-radius: 5px;
+    padding: 20px;
     color: white;
+    position: relative;
+    bottom: 70px;
   }
   
   .closebtn {
