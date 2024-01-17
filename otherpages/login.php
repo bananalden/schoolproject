@@ -17,21 +17,7 @@
     <div class="title">
         <h1> Administrator Login </h1>   
     </div>
-    <div class="error">
-            <?php 
-        if (isset($_GET["error"])){
-            if($_GET["error"] == "")
-            {
-                echo "<p></p>";
-            }
-
-            else if($_GET["error"] == "wrongcredentials"){
-                echo '<p color="red">Wrong credentials</p>';
-            }
-        }
-        ?>
     
-    </div>
     <form  action="backend/logcheck.php" method="post">  
         <div class="container">   
             <div class="user-details">
@@ -46,6 +32,22 @@
 
             <button type="submit" name="submit">Login</button>
             <a href="../index.php">Click here for the Time-In form for Employees!</a>
+        </div>
+
+        <div class="error">
+                <?php 
+            if (isset($_GET["error"])){
+                if($_GET["error"] == "")
+                {
+                    echo "<p></p>";
+                }
+
+                else if($_GET["error"] == "wrongcredentials"){
+                    echo '<p color="red">Wrong credentials</p>';
+                }
+            }
+            ?>
+        
         </div>
        
     </form>

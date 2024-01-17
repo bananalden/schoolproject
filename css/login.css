@@ -109,8 +109,11 @@ p {
     text-transform: uppercase;
     font-family: 'Poppins',sans-serif;
     border-radius: 5px;
+    text-align: center;
     padding: 20px;
     color: white;
     position: relative;
-    bottom: 180px;
+    bottom: 70px;
+    left: 135px;
+    width: 40%;
 }
