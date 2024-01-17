@@ -13,28 +13,26 @@
 
 </head>
 <body>
-
-    <div class="title">
-        <h1> Administrator Login </h1>   
-    </div>
     
     <form  action="backend/logcheck.php" method="post">  
-        <div class="container">   
-            <div class="user-details">
-                <label>Username : </label>   
+        <div class="container-login">  
+            <div class="title">
+                <h1> Administrator Login </h1>   
+            </div>
+            
+            <div class="user-details"> 
                 <input type="text" placeholder="Enter Username" name="uname" required>
             </div>
 
-            <div class="user-details">
-                <label>Password : </label>   
+            <div class="user-details">  
                 <input type="password" placeholder="Enter Password" name="pword" required>
             </div>  
 
             <button type="submit" name="submit">Login</button>
             <a href="../index.php">Click here for the Time-In form for Employees!</a>
-        </div>
 
-        <div class="error">
+            <div class="error">
+            <span id="error-symbol">⚠️</span>
                 <?php 
             if (isset($_GET["error"])){
                 if($_GET["error"] == "")
@@ -48,7 +46,9 @@
             }
             ?>
         
+            </div>
         </div>
+
        
     </form>
 </body>

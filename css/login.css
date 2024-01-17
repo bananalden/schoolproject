@@ -15,32 +15,28 @@ body {
 
 .title {
     font-family: 'Poppins',sans-serif;
+    text-align: center;
     justify-content: center;
-    place-items: center;
-    margin-top: 100px;
     display: flex;
-    width: 85%;
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
     height: 80px;
     color: #f95959;
     /* color: #FCBB6D; #CC2A49 */
 }
-.title h1 {
-    padding-top: 170px;
-    letter-spacing: 10px;
-    position: relative;
-    left: 15px;
-}
 
-.container {   
-    width: 80%;
-    height:300px;
-    padding: 25px;   
+.container-login {   
+    padding: 25px; 
+    margin-top: 240px;  
     background-color: #FCBB6D; 
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-    margin-top: 100px;
     position: relative;
-    left: 30px;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
@@ -50,15 +46,34 @@ label {
 }
 
 input[type=text], input[type=password] {   
-    border: 1px solid #f95959;
-    height: 45px;
-    width: 95%;
+    /* border: 1px solid #f95959; */
+    border: none;
+    height: 100%;
+    width: 100%;
     outline: none;
     font-size: 16px;
     border-radius: 5px;
-    padding-left: 15px;
-    border-bottom-width: 2px;
     font-family: 'Poppins',sans-serif;
+    cursor: text;
+}
+
+
+.user-details {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 12%;
+}
+
+
+::placeholder {
+    text-indent: 10px;
+    color: red;
+    opacity: 1;
+}
+
+
+input:focus {
+    border: 2px solid #f95959;
 }
 
 button {   
@@ -73,13 +88,13 @@ button {
     border: none;   
     cursor: pointer;
     font-family: 'Poppins',sans-serif;
-    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    transition: 0.5s;
 }
 
 button:hover {
     background-color: #ececec;
     color: #D8737F;
-    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    /* box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7; */
     transform: translateY(-2px);
     cursor: pointer;
 }
@@ -90,6 +105,10 @@ button:active{
 
 a {
     color: #CC2A49;
+    font-family: 'Poppins',sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 .cancelbtn {   
     width: auto;   
@@ -104,16 +123,21 @@ a {
 
 
 /******** ALERT MESSAGE ********/
-p {
-    background-color: #f44336;
+
+.error {
+    background-color: #FFBABA;
+    border:2px solid #f95959;
     text-transform: uppercase;
     font-family: 'Poppins',sans-serif;
     border-radius: 5px;
-    text-align: center;
     padding: 20px;
-    color: white;
-    position: relative;
-    bottom: 70px;
-    left: 135px;
-    width: 40%;
+    color: #f95959;
+    width: 100%;
+    height: 2%;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
