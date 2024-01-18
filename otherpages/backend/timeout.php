@@ -12,46 +12,40 @@ $curDate = date("Y-m-d");
 $emptyTimein = databaseDateTimeInNull($conn, $empID);
 $nullTimeExit = databaseDateTimeOutNull($conn, $empID);
 $empIDCAPS = strtoupper($empID);
+$dateOutexists = grabDateoutvalue($conn, $empIDCAPS);
 //strtotime($curdatetime);
 
 if (empIDexists($conn, $empID) == false){
     //NONEXISTANT EMPID
     header("Location:/schoolproject/index.php?errorCode=2");
     exit();
-
 }
 
+else{
 
-else {
-   if(empty($emptyTimein)){
-    header('location:/schoolproject/index.php?errorCode=3');
-   }
+    if ($checkTimein == true){
+        header("Location:/schoolproject/index.php?errorCode=3");
+    }
 
-   else{
-    header('location:/schoolproject/index.php?errorCode=5');
-   }
-
-   if($nullTimeExit == true){
-
-if ($curDate > $usertimeoutDate){
-        $sql = "UPDATE usertime SET timeExit = CURRENT_TIMESTAMP WHERE empID = '$empIDCAPS' AND DATE(timein) = CURRENT_DATE;";
-        $result = mysqli_query($conn, $sql);
-    
-        if($result){
-            header("Location:/schoolproject/index.php?errorCode=4");
-            exit();
+    else{
+        if(empty($dateOutexists)){
+            $sql = "UPDATE usertime SET timeExit = CURRENT_TIMESTAMP WHERE empID = '$empIDCAPS' AND DATE(timein) = CURRENT_DATE;";
+            $result = mysqli_query($conn, $sql);
+        
+            if($result){
+                header("Location:/schoolproject/index.php?errorCode=4");
+                exit();
+            }
+            else{
+                die(mysqli_error($conn));
+            }
         }
+
         else{
-            die(mysqli_error($conn));
+            header("Location:/schoolproject/index.php?errorCode=5"); 
         }
     }
-    
-else {
-        header("Location:/schoolproject/index.php?errorCode=5");
-        exit();
-    }
 
 }
 
-}
 ?>

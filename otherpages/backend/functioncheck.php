@@ -311,7 +311,7 @@ function grabDept($conn, $empID){
 
 //checks if the table is empty first before inputting
 function checkTimein($conn, $empID){
-    $sql = "SELECT empID, timein FROM usertime WHERE empID = ?;";
+    $sql = "SELECT empID, DATE(timein) AS timein FROM usertime WHERE empID = ? AND DATE(timein) = CURRENT_DATE;";
     $stmt = mysqli_stmt_init($conn);
     
     $result;
@@ -326,18 +326,18 @@ function checkTimein($conn, $empID){
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
     $getTime = mysqli_fetch_assoc($resultData);
-    $empRow = $getTime["empID"];
+    $empRow = $getTime["timein"];
     mysqli_stmt_close($stmt);
     
-    if($empRow){
+    if(empty($empRow)){
         $result = true;
-        //Return this if table has values
+        //Return this if table has no value
         return $result;
     }
 
     else{
         $result = false;
-        //Return if table has no values
+        //Return if table has  values
         return $result;
     }
 
@@ -534,5 +534,31 @@ function matchEmpID($conn, $empID){
     return $matchingEmpID;
 
 }
+
+function grabDateoutvalue($conn, $empID){
+    $sql = "SELECT DATE(timeExit) AS timeExit FROM usertime WHERE empID = ? AND DATE(timeExit) = CURRENT_DATE";
+    $stmt = mysqli_stmt_init($conn);
+    
+  
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+
+        header("Location: ../registration.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $empID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    $result = mysqli_fetch_assoc($resultData);
+    $dateOutvalue = $result["timeExit"];
+ 
+   
+    mysqli_stmt_close($stmt);
+    return $dateOutvalue;
+
+}
+
 
 ?>
