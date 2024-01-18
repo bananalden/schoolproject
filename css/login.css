@@ -45,32 +45,25 @@ label {
     color: #233142;
 }
 
-input[type=text], input[type=password] {   
-    /* border: 1px solid #f95959; */
-    border: none;
+input {
+    text-indent: 15px;
+    border-radius: 10px;
+    background: #ececec;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
     height: 100%;
     width: 100%;
     outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    font-family: 'Poppins',sans-serif;
+    border: none;
     cursor: text;
+    /* border: 1px solid #f95959; */
 }
-
 
 .user-details {
     margin-bottom: 10px;
     width: 100%;
     height: 12%;
 }
-
-
-::placeholder {
-    text-indent: 10px;
-    color: red;
-    opacity: 1;
-}
-
 
 input:focus {
     border: 2px solid #f95959;
@@ -125,8 +118,6 @@ a {
 /******** ALERT MESSAGE ********/
 
 .error {
-    background-color: #FFBABA;
-    border:2px solid #f95959;
     text-transform: uppercase;
     font-family: 'Poppins',sans-serif;
     border-radius: 5px;
@@ -138,6 +129,20 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+p {
+    background-color: #79c2d0;
+    border:2px solid #f95959;
+    padding: 10px 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+#error-symbol {
+    margin-right: 5px;
 }
 
 

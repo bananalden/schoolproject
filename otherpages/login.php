@@ -32,7 +32,6 @@
             <a href="../index.php">Click here for the Time-In form for Employees!</a>
 
             <div class="error">
-            <span id="error-symbol">⚠️</span>
                 <?php 
             if (isset($_GET["error"])){
                 if($_GET["error"] == "")
@@ -41,7 +40,7 @@
                 }
 
                 else if($_GET["error"] == "wrongcredentials"){
-                    echo '<p color="red">Wrong credentials</p>';
+                    echo '<p color="red"><span id="error-symbol">⚠️</span>Wrong credentials</p>';
                 }
             }
             ?>

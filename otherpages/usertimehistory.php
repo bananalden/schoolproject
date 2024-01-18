@@ -30,7 +30,7 @@ require 'backend/database.php'
       </nav> 
       
       <div class="button-container">
-        <form action="" method="GET">
+        <form class="fillup" action="" method="GET">
             <input type="text" name="search" value="<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder="Input user Employee ID">
             <button type="submit" class="create-btn">Search</button>
         </form>
