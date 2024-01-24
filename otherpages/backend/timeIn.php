@@ -13,7 +13,7 @@ $curDate = date("Y-m-d");
 $empIDCAPS = strtoupper($empID);
 //strtotime($curdatetime);
 
-if (empIDexists($conn, $empID) == false){
+if (empIDexists($conn, $empIDCAPS) == false){
     //NONEXISTANT EMPID
     header("Location:/schoolproject/index.php?errorCode=2");
     exit();

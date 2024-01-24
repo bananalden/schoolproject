@@ -56,8 +56,11 @@
         <input name="empID" type="text" placeholder="Enter ID to Time In/Out" required></input>
         <button type="submit" formaction="otherpages/backend/timeIn.php">Time In</button>
         <button type="submit" formaction="otherpages/backend/timeout.php">Time Out</buton>
+        
     </form>
+    
     </div>
+    <a id="logpage" href="otherpages/login.php">Back to Login Page</a>
 <!--<form action="" method="GET">
 <input type="text" name="search" value= "<?php if (isset($_GET["search"])){echo $_GET["search"];} ?>" placeholder = "Search Time">
 <button type="submit">Search</button>
@@ -79,7 +82,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php include 'otherpages/backend/livesearch.php'; ?>
+
         </tbody>
     </table>
 </div>
