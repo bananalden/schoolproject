@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Welcome to X employee time in!</h1>
+    <h1>Welcome to X employee attendance!</h1>
     <div class="clock-time">
         <h1 id="timenow"></h1>
     </div>
