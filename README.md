@@ -6,5 +6,5 @@ unreadable code when loading in.
 This project only served to be used for a school project only and so never reached public use. This section will highlight how to set it up for local development.
 
 1. Install XAMPP and place project folder inside htdocs
-2. Inside the *timeinfeaturetest* folder, change the parameters for the database like the *$db_server, $db_user, $db_pass, and $db_name* to set up the connection to the database.
+2. Inside the *timeinfeaturetest* folder, change the parameters for the database.php like the *$db_server, $db_user, $db_pass, and $db_name* to set up the connection to the database.
 3. Open the MySQL and XAMPP server in order to launch to the local host.
