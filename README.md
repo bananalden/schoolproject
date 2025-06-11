@@ -2,7 +2,7 @@
 This was the very first project in collaboration with Mark Joseph Mendiola during my time in College. It was the very first programming related group activity that required me to act as a lead. A lot of the systems/code is very crude with how a lot of it is written in raw PHP so expect a lot of
 unreadable code when loading in.
 
-#How to set up
+## How to set up
 This project only served to be used for a school project only and so never reached public use. This section will highlight how to set it up for local development.
 
 1. Install XAMPP and place project folder inside htdocs
